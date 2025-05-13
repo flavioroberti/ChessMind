@@ -3,7 +3,7 @@
 <p align="center">Desenvolvendo sua mente, uma jogada por vez.</p>
 
 <div align="center">
-  <img src="../ChessMind/img/banner.jpg" alt="ChessMind Banner" width="600">
+  <img src="https://img.freepik.com/fotos-premium/um-classico-jogo-de-tabuleiro-de-xadrez-como-banner_770883-271.jpg" alt="ChessMind Banner" width="600">
 </div>
 
 ---
