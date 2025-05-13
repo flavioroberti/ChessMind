@@ -209,6 +209,7 @@ header {
     object-fit: contain;    
     display: block;
     margin: 0 auto 10px;    
+    filter: invert();
 }
 
 .flexbox6 h2 {
@@ -256,6 +257,7 @@ header {
 .imgflexquatro {
     width: 60px;
     margin-bottom: 15px;
+    filter: invert();
 }
 
 .flexbox8 h2 {
