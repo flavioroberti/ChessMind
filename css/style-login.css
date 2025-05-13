@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container-login {
+  display: flex;
+  height: 100vh;
+}
+
+.imagem-lado-esquerdo {
+  width: 50%;
+  background-image: url('https://images.unsplash.com/photo-1600375593482-9a8d79ad53c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=934&q=80');
+  background-size: cover;
+  background-position: center;
+  background-color: #2c2c2c;
+}
+
+.formulario-login {
+  width: 50%;
+  background-color: #1b1b1b;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.formulario-login h1 {
+  color: #3aaf5c;
+  margin-bottom: 30px;
+}
+
+.formulario-login input {
+  width: 100%;
+  max-width: 300px;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #2c2c2c;
+  color: #fff;
+}
+
+.formulario-login input::placeholder {
+  color: #aaa;
+}
+
+.texto-login {
+  font-size: 14px;
+  color: #ccc;
+  margin-top: 10px;
+  margin-bottom: 25px; /* Substitui o <br> */
+}
+
+.texto-login a {
+  color: #3aaf5c;
+  text-decoration: none;
+}
+
+.texto-login a:hover {
+  text-decoration: underline;
+}
+
+.botoes-login {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.botao-entrar{
+  background-color: #3aaf5c;
+  color: #000;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.botao-entrar:hover,
+.botao-cadastrar:hover {
+  background-color: #5fdc7d;
+}
+
+.botao-voltar-home {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 28px;
+  text-decoration: none;
+  background-color: #3aaf5c;
+  color: #000;
+  padding: 10px 14px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.botao-voltar-home {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  background-color: #5fdc7d;
+  border: none;
+  padding: 6px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.botao-voltar-home:hover {
+  transform: scale(1.1);
+}
+
+.botao-voltar-home svg {
+  display: block;
+}
