@@ -148,3 +148,9 @@ header {
     margin-top: 20px;
     
 }
+
+.botao-voltar:hover {
+    transition: all 0.6s ease;
+    transform: scale(1.1);
+    
+}

@@ -10,7 +10,7 @@ html, body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.missao {
+.sobre-mim {
   min-height: 100vh;
   background-color: #1e1e1e;
   padding: 80px 20px;
@@ -65,77 +65,98 @@ header {
     background-color: #5fdc7d;
     color: #000 !important;
 }
-
-.card-missao {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    background-color: #2b2b2b;
-    border-radius: 15px;
-    padding: 40px;
-    gap: 30px;
-    max-width: 1200px;
-    width: 100%;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-}
-
-.foto-missao {
-    width: 100%;
-    max-width: 300px;
-    height: auto;
-    border-radius: 10px;
-    object-fit: cover;
-    box-shadow: 0 0 10px rgba(58, 175, 92, 0.5);
-    display: block;
-    margin: 0 auto;
-    object-fit: cover;
-    padding: 10px;
-}
-
-.texto-missao {
-    flex: 1;
+.formacao-cognitiva {
+    background-color: #1e1e1e;
+    padding: 80px 20px;
+    text-align: center;
     color: #f2f2f2;
 }
 
-.texto-missao h1 {
+.formacao-cognitiva h1 {
+    font-size: 2.8rem;
     color: #3aaf5c;
-    font-size: 2.2rem;
-    font-family: Arial, Helvetica, sans-serif;
     margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
     font-weight: 700;
     text-shadow: 2px 2px 6px #000;
-
 }
 
-.texto-missao p {
-    font-size: 16px;
-    line-height: 1.9;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin-bottom: 18px;
+.formacao-cognitiva .intro {
+    font-size: 18px;
+    margin-bottom: 40px;
     color: #e8e8e8;
-    text-align: justify;
+    text-shadow: 1px 1px 3px #000;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.beneficios {
+    display:flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 60px 20px;
+    background-color: #1e1e1e;
+    flex-wrap: wrap;
+}
+
+.card-beneficio {
+    width: 300px;
+    background-color: #2b2b2b;
+    padding: 25px;
+    border-radius: 10px;
+    color: #f2f2f2;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.card-beneficio:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 3.5px 15px #3aaf5c;
+}
+
+.card-beneficio i {
+    font-size: 40px;
+    color: #3aaf5c;
+    margin-bottom: 15px;
+}
+
+.card-beneficio h2 {
+    color: #3aaf5c;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.card-beneficio p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #ddd;
     text-shadow: 1px 1px 3px #000;
 }
 
-.texto-missao strong {
-    color: #3aaf5c;
-}
-
-.texto-missao em {
-    color: #ccc;
+.citacao {
     font-style: italic;
+    color: #ccc;
+    margin-top: 40px;
+    font-size: 1.2rem;
 }
 
-.frase-final{
-    font-size: 1.5rem;
+.botao-centro {
+    margin-top: 30px;
+}
+
+.btn-conheca {
+    background-color: #3aaf5c;
+    color: #000;
+    padding: 12px 24px;
+    border-radius: 5px;
     font-weight: bold;
-    color: #3aaf5c;
-    text-align: center;
-    margin-top: 20px;  
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.btn-conheca-hover{
+    background-color: #5fdc7d;
 }
 
 .card-voltar-menu{
@@ -146,7 +167,6 @@ header {
     background-color: #1e1e1e;
     border-top: 2px solid #3aaf5c;
     margin-top: 20px;
-    
 }
 
 .botao-voltar:hover {
