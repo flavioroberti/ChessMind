@@ -100,7 +100,7 @@ header {
 
 .texto-sobre h1 {
     color: #3aaf5c;
-    font-size: 2.2rem;
+    font-size: 35.2px;
     font-family: Arial, Helvetica, sans-serif;
     margin-bottom: 20px;
     display: flex;
@@ -131,7 +131,7 @@ header {
 }
 
 .frase-final{
-    font-size: 1.5rem;
+    font-size: 24px;
     font-weight: bold;
     color: #3aaf5c;
     text-align: center;
@@ -157,7 +157,7 @@ header {
 }
 
 .card-curiosidade h1 {
-    font-size: 2.5rem;
+    font-size: 40px;
     color: #3aaf5c;
     margin-bottom: 20px;
     text-align: center;
@@ -170,7 +170,7 @@ header {
 }
 
 .curiosidade-item h2 {
-    font-size: 1.8rem;
+    font-size: 28.8px;
     color: #3aaf5c;
     font-weight: bold;
     margin-bottom: 10px;

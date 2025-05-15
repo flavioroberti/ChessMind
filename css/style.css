@@ -74,14 +74,31 @@ header {
 }
 
 .secao1 h1 {
-    font-size: 3rem;
+    font-size: 48px;
     margin-bottom: 30px;
     text-shadow: 2px 2px 6px #000;
 }
 
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4CAF50; 
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
+
+
 .secao1 button {
     padding: 14px 28px;
-    font-size: 1rem;
+    font-size: 16px;
     background-color: #3aaf5c;
     border: none;
     border-radius: 5px;
@@ -111,13 +128,13 @@ header {
 }
 
 .flexbox1 h1 {
-    font-size: 2rem;
+    font-size: 32px;
     color: #3aaf5c;
     margin-bottom: 20px;
 }
 
 .flexbox1 h2 {
-    font-size: 1.2rem;
+    font-size: 19.2px;
     margin-bottom: 12px;
 }
 
@@ -155,7 +172,7 @@ header {
 }
 
 .flexbox2 h1 {
-    font-size: 2.2rem;
+    font-size: 35.2px;
     color: #3aaf5c;
     text-align: center;
     margin-bottom: 30px;
@@ -201,6 +218,7 @@ header {
 
 .flexbox6:hover {
     transform: scale(1.05);
+    box-shadow: 0 3.5px 15px #b51111;
 }
 
 .imgflextres {
@@ -225,7 +243,7 @@ header {
 
 .titulosecao4 {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 40px;
     color: #3aaf5c;
     margin-bottom: 60px;
 }
@@ -252,6 +270,7 @@ header {
 
 .flexbox8:hover {
     transform: scale(1.05);
+    box-shadow: 0 3.5px 15px #3aaf5c;
 }
 
 .imgflexquatro {
@@ -282,13 +301,13 @@ header {
 }
 
 .flexbox9 h1 {
-    font-size: 2.5rem;
+    font-size: 40px;
     color: #3aaf5c;
     margin-bottom: 20px;
 }
 
 .flexbox9 h2 {
-    font-size: 1.3rem;
+    font-size: 20.8px;
     margin-bottom: 30px;
 }
 

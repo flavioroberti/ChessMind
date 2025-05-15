@@ -73,7 +73,7 @@ header {
 }
 
 .formacao-cognitiva h1 {
-    font-size: 2.8rem;
+    font-size: 44.8px;
     color: #3aaf5c;
     margin-bottom: 20px;
     font-weight: 700;
@@ -123,7 +123,7 @@ header {
 
 .card-beneficio h2 {
     color: #3aaf5c;
-    font-size: 1.4rem;
+    font-size: 22.4px;
     margin-bottom: 10px;
 }
 
@@ -138,7 +138,7 @@ header {
     font-style: italic;
     color: #ccc;
     margin-top: 40px;
-    font-size: 1.2rem;
+    font-size: 19.2px;
 }
 
 .botao-centro {
