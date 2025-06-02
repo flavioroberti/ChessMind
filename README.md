@@ -18,16 +18,16 @@ O **ChessMind** é uma plataforma educacional e interativa desenvolvida para aux
 
 ## 📂 Estrutura do Projeto
 
-📁 css/ → Estilos personalizados (style.css, login.css, dashboard.css...)
-📁 img/ → Imagens e ícones utilizados
-📁 public/ → Páginas HTML (index.html, login.html, taticas.html, quiz.html...)
-📁 js/ → Scripts JavaScript (quiz.js, calculadora.js, dashboard.js...)
-📁 routes/ → Rotas da API (quiz.js, calculadora.js...)
-📁 controllers/ → Lógica das funcionalidades (quizController.js, calculadoraController.js...)
-📁 models/ → Acesso ao banco de dados (quizModel.js, calculadoraModel.js...)
-📁 database/ → Script de criação do banco e tabelas
-README.md → Documentação do projeto
-server.js → Inicialização do servidor
+- 📁 css/ → Estilos personalizados (style.css, login.css, dashboard.css...)
+- 📁 img/ → Imagens e ícones utilizados
+- 📁 public/ → Páginas HTML (index.html, login.html, taticas.html, quiz.html...)
+- 📁 js/ → Scripts JavaScript (quiz.js, calculadora.js, dashboard.js...)
+- 📁 routes/ → Rotas da API (quiz.js, calculadora.js...)
+- 📁 controllers/ → Lógica das funcionalidades (quizController.js, calculadoraController.js...)
+- 📁 models/ → Acesso ao banco de dados (quizModel.js, calculadoraModel.js...)
+- 📁 database/ → Script de criação do banco e tabelas
+- README.md → Documentação do projeto
+- server.js → Inicialização do servidor
 
 
 ---
