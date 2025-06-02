@@ -1,4 +1,4 @@
-<h1 align="center"> ♞ ChessMind</h1>
+<h1 align="center">♞ ChessMind</h1>
 
 <p align="center">Desenvolvendo sua mente, uma jogada por vez.</p>
 
@@ -10,54 +10,76 @@
 
 ## 🧠 Sobre o Projeto
 
-O **ChessMind** é um site educacional e interativo para jogadores de xadrez, com foco em ensino, táticas e prática online.
+O **ChessMind** é uma plataforma educacional e interativa desenvolvida para auxiliar iniciantes e jogadores intermediários a aprenderem e se aperfeiçoarem no xadrez.
 
-Desenvolvido com foco em iniciantes e jogadores intermediários, ele oferece uma jornada completa no aprendizado do xadrez.
+> Combinando teoria, prática, gamificação e dados, o site oferece uma experiência completa para desenvolver habilidades cognitivas e estratégicas no jogo de xadrez.
 
 ---
 
 ## 📂 Estrutura do Projeto
-📁 css → Estilos personalizados (style.css, login.css...)
-📁 img → Imagens e ícones usados no site
-📁 public → Páginas HTML principais (index.html, login.html, taticas.html...)
-README.md → Descrição e informações do projeto
+
+📁 css/ → Estilos personalizados (style.css, login.css, dashboard.css...)
+📁 img/ → Imagens e ícones utilizados
+📁 public/ → Páginas HTML (index.html, login.html, taticas.html, quiz.html...)
+📁 js/ → Scripts JavaScript (quiz.js, calculadora.js, dashboard.js...)
+📁 routes/ → Rotas da API (quiz.js, calculadora.js...)
+📁 controllers/ → Lógica das funcionalidades (quizController.js, calculadoraController.js...)
+📁 models/ → Acesso ao banco de dados (quizModel.js, calculadoraModel.js...)
+📁 database/ → Script de criação do banco e tabelas
+README.md → Documentação do projeto
+server.js → Inicialização do servidor
+
 
 ---
 
 ## 🚀 Funcionalidades
 
-✅ Página inicial (Institucional)
-✅ Aprendizado básico de xadrez 
-✅ Táticas famosas e eficazes
-✅ Quiz interativo  
-✅ Dashboard (Evolução do Usuário)
+- ✅ Página inicial com informações institucionais  
+- ✅ Aprendizado básico sobre regras e peças  
+- ✅ Explicação de táticas famosas  
+- ✅ Quiz interativo com pontuação e ranking  
+- ✅ Dashboard com gráficos de desempenho  
+- ✅ Cálculo de MMR baseado em vitórias e derrotas  
+- ✅ Sistema de login e cadastro  
+- ✅ Salvamento de dados no banco de dados  
+- ✅ Layout responsivo e tema escuro com destaque verde  
 
 ---
 
 ## 🖥️ Tecnologias Utilizadas
 
-- HTML
-- CSS
-- JavaScript
-- ChartJs
-- MySQL
-- Virtual Machine
+- **Front-End:** HTML5, CSS3, JavaScript, Chart.js  
+- **Back-End:** Node.js (Express)  
+- **Banco de Dados:** MySQL  
+- **Ambiente:** Máquina Virtual Linux (Ubuntu Server)
 
 ---
 
-## 📸 Demonstrações
+## 🧩 Arquitetura
+
+O projeto segue o padrão MVC:
+
+- **Model:** Responsável pela comunicação com o banco de dados.  
+- **Controller:** Processa regras de negócio e interage com o model.  
+- **View (HTML/CSS/JS):** Interface que o usuário interage diretamente.  
+- **Rotas (Express):** API para envio e recuperação de dados.
 
 ---
 
-## 📌 Melhorias Futuras
+## 🧪 Como Rodar o Projeto Localmente
 
-- ✅ Possível Desenvolvimento de um jogo funcional de xadrez
-- ✅ Ranking de jogadores do site
+```bash
+# Clone o repositório
+git clone https://github.com/seuusuario/ChessMind.git
 
----
+# Acesse a pasta do projeto
+cd ChessMind
 
-## 👥 Equipe
+# Instale as dependências
+npm install
 
-- [Flavio Roberti Roque](https://github.com/flavioroberti) — Futuro Back-End
+# Inicie o servidor
+node server.js
 
----
+# Acesse pelo navegador
+http://localhost:3333
