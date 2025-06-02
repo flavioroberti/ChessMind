@@ -80,6 +80,7 @@ npm install
 
 # Inicie o servidor
 node server.js
+npm start
 
 # Acesse pelo navegador
 http://localhost:3333
