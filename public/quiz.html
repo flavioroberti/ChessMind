@@ -2,10 +2,14 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ChessMind | Formação</title>
-    <link rel="stylesheet" href="../css/style-formacao.css" />
+    <meta charset="UTF-8">
+    <title>ChessMind | Quiz </title>
+    <link rel="stylesheet" href="../css/style-quiz.css">
+    <script src="./js/sessao.js"></script>
+    <script> validarSessao();
+        alert("Você precisa estar Logado!");
+
+    </script>
 </head>
 
 <body>
@@ -29,44 +33,24 @@
         </nav>
     </header>
 
-    <section class="formacao-cognitiva">
-        <h1>Formação Cognitiva com o Xadrez</h1>
-        <p class="intro">O Xadrez é uma ferramenta poderosa para desenvolver habilidades cognitivas essenciais, como
-            foco, memória, lógica e tomada de decisão</p>
-
-        <div class="beneficios">
-            <div class="card-beneficio">
-                <i class="raciocinio"></i>
-                <h2>Raciocínio Lógico</h2>
-                <p>Ajuda a reconhecer padrões, antecipar jogadas e tomar decisões com base em lógica e análise</p>
-            </div>
-
-            <div class="card-beneficio">
-                <i class="decisao"></i>
-                <h2>Tomada de Decisão</h2>
-                <p>Treina a mente para avaliar opções e agir com estratégia, mesmo sob pressão</p>
-            </div>
-
-            <div class="card-beneficio">
-                <i class="foco"></i>
-                <h2>Paciência e Foco</h2>
-                <p>Exige atenção contínua e o controle da impulsividade, promovendo disciplina mental</p>
-            </div>
-
-            <div class="card-beneficio">
-                <i class="graduacao"></i>
-                <h2>Desempenho Cognitivo</h2>
-                <p>Fortalece memória, atenção, concentração e planejamento</p>
-            </div>
+    <div class="background-chess"></div>
+    <div class="quiz-container">
+        <div class="quiz-card">
+            <h1>Quiz de Xadrez</h1>
+            <div id="progresso">Pergunta 1 de 12</div>
+            <form id="quiz-form">
+            </form>
+            <div id="resultado" class="resultado-scroll"></div>
         </div>
-
-        <p class="citacao">"O xadrez é a ginástica da mente" — Blaises Pascal</p>
-
-        <div class="botao-centro">
-            <a href="../quiz.html" class="btn-conheca">Teste seu raciocínio</a>
+        <div class="quiz-footer">
+            <p>Você pode acessar a Dashboard para ver seu desempenho no quiz.</p>
+            <button onclick="irParaDashboard()" class="btn-dashboard">
+                Ver Desempenho
+            </button>
         </div>
+    </div>
+    <script src="./js/quiz.js"></script>
 
-    </section>
 
     <section class="voltar-menu">
         <div class="card-voltar-menu">
@@ -79,8 +63,11 @@
             </a>
         </div>
     </section>
+</body>
 
-    <script>
+</html>
+
+<script>
     document.addEventListener("DOMContentLoaded", function () {
         const nomeUsuario = sessionStorage.NOME_USUARIO;
 
@@ -99,4 +86,13 @@
         sessionStorage.clear();
         window.location.href = "../login.html";
     }
+
+
+    function irParaDashboard() {
+        window.location.href = "dashboard.html"; 
+    }
+
+
+
+
 </script>

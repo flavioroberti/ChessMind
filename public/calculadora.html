@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ChessMind | Calculadora</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="../css/style-calculadora.css" />
+     <script src="./js/sessao.js"></script>
+    <script> validarSessao();
+        alert("Você precisa estar Logado!");
+
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img class="logoheader" src="../img/logochessmindbranco.png" alt="Logo Cavalo de Xadrez" />
+        </div>
+        <nav class="navbar">
+            <a href="../index.html">Home</a>
+            <span>|</span>
+            <a href="../aprenda.html">Aprenda a jogar</a>
+            <a href="../taticas.html">Táticas</a>
+            <a href="../quiz.html">Quiz</a>
+            <a href="../calculadora.html">Calculadora</a>
+            <div class="user-info" id="user-info" style="display: none;">
+                <span id="b_usuario"></span>
+                <span class="setinha" onclick="limparSessao()" title="Sair">⏷</span>
+            </div>
+            <a class="btn-login" id="login-btn" href="login.html">Login</a>
+        </nav>
+    </header>
+
+    <div class="background-chess"></div>
+
+    <div class="calculadora-container">
+        <div class="calculadora-card">
+            <h2>Calculadora de MMR</h2>
+            <p>Descubra seu MMR com base em seu desempenho!</p>
+
+            <div class="formulario">
+                <label for="vitorias">Vitórias em Partidas de Xadrez:</label>
+                <input type="number" id="vitorias" placeholder="0" min="0">
+
+                <label for="derrotas">Derrotas em Partidas de Xadrez:</label>
+                <input type="number" id="derrotas" placeholder="0" min="0">
+
+                <label for="empates">Empates em Partidas de Xadrez:</label>
+                <input type="number" id="empates" placeholder="0" min="0">
+
+                <label for="mmrInicial">MMR Inicial:</label>
+                <input type="number" id="mmrInicial" value="1200" min="0">
+
+                <label for="dificuldadeOponente">Nível dos Oponentes:</label>
+                <select id="dificuldadeOponente">
+                    <option value="1">Fácil</option>
+                    <option value="2" selected>Médio</option>
+                    <option value="3">Difícil</option>
+                </select>
+
+                <button onclick="calcularMMR()">Calcular MMR</button>
+
+                <div id="resultadoMMR" class="resultado"></div>
+            </div>
+        </div>
+
+        <div class="quiz-footer">
+            <p>Acesse a Dashboard para entender melhor seu desempenho.</p>
+            <button onclick="irParaDashboard()" class="btn-dashboard">
+                Ver Desempenho
+            </button>
+        </div>
+    </div>
+
+    <section class="voltar-menu">
+        <div class="card-voltar-menu">
+            <a href="../index.html#conheca" class="botao-voltar-menu">
+                <div class="botao-voltar">
+                    <img src="../img/home.png" alt="Ícone de Casa" class="home-icon">
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const nomeUsuario = sessionStorage.NOME_USUARIO;
+
+            const userInfo = document.getElementById("user-info");
+            const loginBtn = document.getElementById("login-btn");
+            const b_usuario = document.getElementById("b_usuario");
+
+            if (nomeUsuario) {
+                b_usuario.innerText = `Olá, ${nomeUsuario.split(' ')[0]}`;
+                userInfo.style.display = "flex";
+                loginBtn.style.display = "none";
+            }
+        });
+
+        function limparSessao() {
+            sessionStorage.clear();
+            window.location.href = "../login.html";
+        }
+
+        function calcularMMR() {
+            const vitorias = Number(document.getElementById('vitorias').value);
+            const derrotas = Number(document.getElementById('derrotas').value);
+            const empates = Number(document.getElementById('empates').value) || 0;
+            const mmrInicial = Number(document.getElementById('mmrInicial').value);
+            const dificuldadeOponente = Number(document.getElementById('dificuldadeOponente').value);
+
+
+            let ganhoPorVitoria;
+            let perdaPorDerrota;
+            const ganhoPorEmpate = 10;
+
+            if (dificuldadeOponente === 1) {
+                ganhoPorVitoria = 15;
+                perdaPorDerrota = 25;
+            } else if (dificuldadeOponente === 2) {
+                ganhoPorVitoria = 25;
+                perdaPorDerrota = 20;
+            } else if (dificuldadeOponente === 3) {
+                ganhoPorVitoria = 35;
+                perdaPorDerrota = 15;
+            } else {
+                ganhoPorVitoria = 25;
+                perdaPorDerrota = 20;
+            }
+
+            const totalPartidas = vitorias + derrotas + empates;
+            let aproveitamento = 0;
+            if (totalPartidas > 0) {
+                aproveitamento = vitorias / totalPartidas;
+            }
+
+            let mmrFinal = mmrInicial + (vitorias * ganhoPorVitoria) + (empates * ganhoPorEmpate) - (derrotas * perdaPorDerrota);
+
+            if (aproveitamento >= 0.7) {
+                mmrFinal += 50;
+            }
+
+            const resultado = document.getElementById('resultadoMMR');
+            resultado.innerHTML = `Seu MMR estimado é <strong>${Math.round(mmrFinal)}</strong>`;
+
+            fetch("http://localhost:3333/calculadora/salvar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    id_usuario: sessionStorage.ID_USUARIO,
+                    mmr_calculado: Math.round(mmrFinal),
+                    vitorias,
+                    derrotas,
+                    empates,
+                    dificuldade_oponente: dificuldadeOponente
+                })
+            })
+                .then(res => res.json())
+                .then(res => console.log("Resposta da API:", res))
+                .catch(err => console.error("Erro ao salvar MMR:", err));
+        }
+
+
+        function irParaDashboard() {
+            window.location.href = "dashboard.html";
+        }
+    </script>
+</body>
+
+</html>

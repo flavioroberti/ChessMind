@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ChessMind</title>
+    <title>ChessMind | Página Principal</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 
@@ -14,21 +14,26 @@
             <img class="logoheader" src="../img/logochessmindbranco.png" alt="Logo Cavalo de Xadrez">
         </div>
         <nav class="navbar">
-            <a href="../public/index.html">Home</a>
+            <a href="../index.html">Home</a>
             <span>|</span>
-            <a href="#">Aprenda a jogar</a>
-            <a href="#">Táticas</a>
-            <a href="#">Ranking</a>
-            <a href="quiz.html">Quiz</a>
-            <a class="btn-login" href="login.html">Login</a>
+            <a href="../aprenda.html">Aprenda a jogar</a>
+            <a href="../taticas.html">Táticas</a>
+            <a href="../quiz.html">Quiz</a>
+            <a href="../calculadora.html">Calculadora</a>
+            <div class="user-info" id="user-info" style="display: none;">
+                <span id="b_usuario"></span>
+                <span class="setinha" onclick="limparSessao()" title="Sair">⏷</span>
+            </div>
+            <a class="btn-login" id="login-btn" href="login.html">Login</a>
+
         </nav>
     </header>
 
     <main>
         <div class="secao1">
             <h1>Desperte sua mente, domine o tabuleiro!</h1>
-            <a href="login.html">
-                <button>Comece sua jornada agora mesmo</button>
+            <a onclick="verificarSessao()">
+                <button id="botao-jornada">Comece sua jornada agora mesmo</button>
             </a>
         </div>
 
@@ -43,7 +48,7 @@
 
             <div class="imgsecao2">
                 <img id="img1secao2" src="../img/pecasxadrez.png" alt="pecas">
-                <img id="img2secao2" src="../img/pessoasjogandoxadrez.png" alt="xadrez">
+                <img id="img2secao2" src="../img/aprenda.jpg" alt="xadrez">
             </div>
         </div>
 
@@ -54,7 +59,7 @@
                 </div>
                 <div class="flexbox3">
                     <h2>Cada mestre tem seu estilo, descubra o seu!</h2>
-                    <button>Descubra!</button>
+                    <a href="taticas.html" class="btn">Descubra!</a>
                 </div>
             </div>
 
@@ -83,25 +88,25 @@
             <h1 class="titulosecao4">Conheça a ChessMind</h1>
 
             <div class="flexboxquatro1">
-                <a class="flexbox8" href="../public/aprenda.html">
+                <a class="flexbox8" href="../aprenda.html">
                     <img class="imgflexquatro" src="../img/aprendizado.png" alt="Ícone Aprendizado">
                     <h2>Aprendizado Garantido</h2>
                     <h3>Aprendizado sólido e progressivo</h3>
                 </a>
 
-                <a class="flexbox8" href="#">
+                <a class="flexbox8" href="../taticas.html">
                     <img class="imgflexquatro" src="../img/estrategia.png" alt="Ícone Estratégia">
                     <h2>Táticas e Estratégias Testadas</h2>
                     <h3>Aberturas, armadilhas, defesas e finalização de jogos</h3>
                 </a>
 
-                <a class="flexbox8" href="#">
+                <a class="flexbox8" href="../quiz.html">
                     <img class="imgflexquatro" src="../img/evolucao.png" alt="Ícone Evolução">
                     <h2>Trilhas de Evolução Pessoal</h2>
                     <h3>Acompanhe sua evolução com quizzes e desafios estratégicos.</h3>
                 </a>
 
-                <a class="flexbox8" href="../public/formacao.html">
+                <a class="flexbox8" href="../formacao.html">
                     <img class="imgflexquatro" src="../img/formacao.png" alt="Ícone Formação Cognitiva">
                     <h2>Formação Cognitiva</h2>
                     <h3>Desenvolve foco, paciência, empatia e pensamento crítico</h3>
@@ -115,21 +120,21 @@
                     <h3>Experiência visual e interativa que facilita o aprendizado</h3>
                 </a>
 
-                <a class="flexbox8" href="../public/sobre.html">
+                <a class="flexbox8" href="../sobre.html">
                     <img class="imgflexquatro" src="../img/missao.png" alt="Ícone Missão">
-                    <h2>Nossa História</h2>
-                    <h3>Nascemos da paixão pelo xadrez e pelo poder que ele tem</h3>
+                    <h2>Minha História</h2>
+                    <h3>A ChessMind nasceu da paixão pelo xadrez e pelo poder que ele tem</h3>
                 </a>
 
-                <a class="flexbox8" href="../public/declaracao.html">
+                <a class="flexbox8" href="../declaracao.html">
                     <img class="imgflexquatro" src="../img/declaracao.png" alt="Ícone Declaração">
-                    <h2>Nossa Declaração</h2>
+                    <h2>Minha Missão</h2>
                     <h3>No ChessMind, cada jogada é um passo no seu crescimento intelectual.</h3>
                 </a>
 
-                <a class="flexbox8" href="../public/contato.html">
+                <a class="flexbox8" href="../contato.html">
                     <img class="imgflexquatro" src="../img/contato.png" alt="Ícone Contato">
-                    <h2>Nosso Contato</h2>
+                    <h2>Meu Contato</h2>
                     <h3>Todo Apoio que você precisa a ChessMind te proporciona!</h3>
                 </a>
             </div>
@@ -139,7 +144,9 @@
             <div class="flexbox9">
                 <h1>A Evolução e busca por conhecimento já começou!</h1>
                 <h2>Vem fazer parte do Alto Nível do Xadrez!</h2>
-                <button>Quero fazer Parte</button>
+                <a onclick="verificarSessaoTaticas()">
+                <button id="botao-parte">Quero Fazer Parte!</button>
+            </a>
             </div>
 
             <div class="imagem-container-sec5">
@@ -160,7 +167,7 @@
 
                     <div class="footer-col">
                         <h4>Fale Conosco</h4>
-                        <p>Email: <a href="mailto:contato@chessmind.com">contato@chessmind.com</a></p>
+                        <p>Email: <a href="mailto:flavio.roque@sptech.school">flavio.roque@sptech.school</a></p>
                         <p>Telefone: <a href="tel:+5511973917791">(11) 97391-7791</a></p>
                         <p>São Paulo - SP</p>
 
@@ -177,10 +184,10 @@
                         <h4>Links Rápidos</h4>
                         <ul>
                             <li><a href="#">Início</a></li>
-                            <li><a href="#">Sobre Nós</a></li>
-                            <li><a href="#">Serviços</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Contato</a></li>
+                            <li><a href="../sobre.html">Sobre Nós</a></li>
+                            <li><a href="../aprenda.html">Aprenda</a></li>
+                            <li><a href="../declaracao.html">Missão</a></li>
+                            <li><a href="../contato.html">Contato</a></li>
                         </ul>
                     </div>
 
@@ -191,3 +198,44 @@
 </body>
 
 </html>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const nomeUsuario = sessionStorage.NOME_USUARIO;
+
+        const userInfo = document.getElementById("user-info");
+        const loginBtn = document.getElementById("login-btn");
+        const b_usuario = document.getElementById("b_usuario");
+
+        if (nomeUsuario) {
+            b_usuario.innerText = `Olá, ${nomeUsuario.split(' ')[0]}`;
+            userInfo.style.display = "flex";
+            loginBtn.style.display = "none";
+        }
+    });
+
+    function limparSessao() {
+        sessionStorage.clear();
+        window.location.href = "../login.html";
+    }
+
+
+    function verificarSessao(){
+        var nome = sessionStorage.getItem("NOME_USUARIO");
+
+        if (nome != null) {
+            window.location.href = "../aprenda.html";
+        } else {
+            window.location.href = "login.html";
+        }
+    }
+
+    function verificarSessaoTaticas(){
+        var nome = sessionStorage.getItem("NOME_USUARIO");
+        if (nome != null) {
+            window.location.href = "../taticas.html";
+        } else {
+            window.location.href = "login.html";
+        }
+    }
+        </script>

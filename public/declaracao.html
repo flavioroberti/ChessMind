@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Declaração ChessMind</title>
+    <title>ChessMind | Declaração</title>
     <link rel="stylesheet" href="../css/style-declaracao.css" />
 </head>
 
@@ -14,13 +14,18 @@
             <img class="logoheader" src="../img/logochessmindbranco.png" alt="Logo Cavalo de Xadrez">
         </div>
         <nav class="navbar">
-            <a href="../public/index.html">Home</a>
+            <a href="../index.html">Home</a>
             <span>|</span>
-            <a href="#">Aprenda a jogar</a>
-            <a href="#">Táticas</a>
-            <a href="#">Ranking</a>
-            <a href="quiz.html">Quiz</a>
-            <a class="btn-login" href="login.html">Login</a>
+            <a href="../aprenda.html">Aprenda a jogar</a>
+            <a href="../taticas.html">Táticas</a>
+            <a href="../quiz.html">Quiz</a>
+            <a href="../calculadora.html">Calculadora</a>
+            <div class="user-info" id="user-info" style="display: none;">
+                <span id="b_usuario"></span>
+                <span class="setinha" onclick="limparSessao()" title="Sair">⏷</span>
+            </div>
+            <a class="btn-login" id="login-btn" href="login.html">Login</a>
+
         </nav>
     </header>
 
@@ -30,34 +35,59 @@
             <div class="texto-missao">
                 <h1>Declaração</h1>
 
-                <p>O ChessMind nasceu da minha paixão pelo xadrez e do desejo de compartilhar essa experiência com
-                    todos. Aqui, o objetivo é criar um espaço onde qualquer pessoa, seja iniciante ou mais experiente,
-                    possa aprender, jogar e se divertir no jogo que tanto amo.</p>
+                <p>Minha missão é compartilhar esse universo fascinante, tornando o xadrez acessível e inspirador para
+                    todos, desde quem está dando os primeiros passos, até os jogadores mais experientes. Quero que cada
+                    visitante sinta a mesma emoção e o desafio que esse jogo incrível me proporciona.</p>
 
-                <p>Acreditamos que o xadrez vai muito além de um simples jogo, ele é uma excelente maneira de exercitar
-                    o cérebro, desenvolver estratégias e até fazer novas amizades. E é isso que queremos proporcionar a
-                    quem acessar a plataforma: aprendizado, prática e diversão, de forma leve e acessível.</p>
+                <p>Mais do que um passatempo, o xadrez me ensinou a pensar antes de agir, a enfrentar derrotas com
+                    resiliência e a celebrar vitórias com humildade. É uma ferramenta poderosa para o
+                    autodesenvolvimento, que promove concentração, estratégia e conexão humana.</p>
 
-                <p>Estamos sempre buscando trazer conteúdos bacanas, dicas e até desafios para quem quer melhorar no
-                    jogo. Nosso objetivo é que todo mundo, independente do nível, sinta-se à vontade para explorar e
-                    crescer aqui no ChessMind.</p>
+                <p>Este projeto é também um compromisso com a educação, a inclusão e o respeito à história do xadrez,
+                    refletindo valores alinhados aos Objetivos de Desenvolvimento Sustentável, como saúde mental,
+                    igualdade de gênero e redução das desigualdades.</p>
 
-                <p> — Flavio Roberti</p>
+                <p>Convido você a mergulhar nesse universo comigo, aprender, praticar, se desafiar e crescer. Que o
+                    ChessMind seja um espaço de descoberta, inspiração e transformação para todos que acreditam no poder
+                    do xadrez.</p>
 
-                <p class="frase-final">♚ Vem jogar com a gente e descobrir o quanto o xadrez pode ser incrível! ♚</p>
+                <p class="frase-final">♚ Vamos juntos nessa jornada! ♚</p>
 
+                <p class="assinatura">— Flavio Roberti</p>
             </div>
+
         </div>
     </section>
 
     <section class="voltar-menu">
         <div class="card-voltar-menu">
-            <a href="../public/index.html#conheca" class="botao-voltar-menu">
+            <a href="../index.html#conheca" class="botao-voltar-menu">
                 <div class="botao-voltar">
-                <img src="../img/home.png" alt="Ícone de Casa" class="home-icon">
+                    <img src="../img/home.png" alt="Ícone de Casa" class="home-icon">
 
                 </div>
                 <menu></menu>
             </a>
         </div>
     </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const nomeUsuario = sessionStorage.NOME_USUARIO;
+
+            const userInfo = document.getElementById("user-info");
+            const loginBtn = document.getElementById("login-btn");
+            const b_usuario = document.getElementById("b_usuario");
+
+            if (nomeUsuario) {
+                b_usuario.innerText = `Olá, ${nomeUsuario.split(' ')[0]}`;
+                userInfo.style.display = "flex";
+                loginBtn.style.display = "none";
+            }
+        });
+
+        function limparSessao() {
+            sessionStorage.clear();
+            window.location.href = "../login.html";
+        }
+    </script>

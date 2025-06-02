@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contato ChessMind</title>
+    <title>ChessMind | Contato</title>
     <link rel="stylesheet" href="../css/style-contato.css" />
 </head>
 
@@ -14,30 +14,39 @@
             <img class="logoheader" src="../img/logochessmindbranco.png" alt="Logo Cavalo de Xadrez">
         </div>
         <nav class="navbar">
-            <a href="../public/index.html">Home</a>
+            <a href="../index.html">Home</a>
             <span>|</span>
-            <a href="#">Aprenda a jogar</a>
-            <a href="#">Táticas</a>
-            <a href="#">Ranking</a>
-            <a href="quiz.html">Quiz</a>
-            <a class="btn-login" href="login.html">Login</a>
+            <a href="../aprenda.html">Aprenda a jogar</a>
+            <a href="../taticas.html">Táticas</a>
+            <a href="../quiz.html">Quiz</a>
+            <a href="../calculadora.html">Calculadora</a>
+            <div class="user-info" id="user-info" style="display: none;">
+                <span id="b_usuario"></span>
+                <span class="setinha" onclick="limparSessao()" title="Sair">⏷</span>
+            </div>
+            <a class="btn-login" id="login-btn" href="login.html">Login</a>
+
         </nav>
     </header>
 
     <section class="contato">
         <div class="card-contato">
-            <img src="../img/contato-chess.jpg" alt="Minha foto" class="foto-contato">
+            <img src="../img/contato.jpg" alt="Minha foto" class="foto-contato">
             <div class="texto-contato">
                 <h1>Contato ChessMind</h1>
                 <p>Se você tem alguma dúvida, sugestão ou apenas quer bater um papo sobre xadrez, estamos aqui para
                     ouvir! </p>
-                <p>Entre em contato conosco através do nosso <strong>e-mail: contato@chessmind.com.br</strong> Estamos sempre
+                <p>Entre em contato conosco através do nosso <strong>e-mail: contato@chessmind.com.br</strong> Estamos
+                    sempre
                     prontos para ajudar e adoraríamos saber sua opinião sobre a plataforma.</p>
 
                 <p>Além disso, você pode nos seguir nas redes sociais para ficar por dentro de todas as novidades,
-                    dicas e conteúdos exclusivos sobre xadrez. Estamos no <strong>Instagram, Facebook e Twitter</strong> como
-                    <strong>@ChessMind</strong> Venha fazer parte da nossa comunidade!</p>
-                <p class="frase-final">♚ Juntos, vamos fazer do <strong>ChessMind</strong> um lugar ainda mais incrível para todos os
+                    dicas e conteúdos exclusivos sobre xadrez. Estamos no <strong>Instagram, Facebook e Twitter</strong>
+                    como
+                    <strong>@ChessMind</strong> Venha fazer parte da nossa comunidade!
+                </p>
+                <p class="frase-final">♚ Juntos, vamos fazer do <strong>ChessMind</strong> um lugar ainda mais incrível
+                    para todos os
                     amantes do xadrez! ♚</p>
 
             </div>
@@ -46,7 +55,7 @@
 
     <section class="voltar-menu">
         <div class="card-voltar-menu">
-            <a href="../public/index.html#conheca" class="botao-voltar-menu">
+            <a href="../index.html#conheca" class="botao-voltar-menu">
                 <div class="botao-voltar">
                     <img src="../img/home.png" alt="Ícone de Casa" class="home-icon">
 
@@ -55,3 +64,24 @@
             </a>
         </div>
     </section>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const nomeUsuario = sessionStorage.NOME_USUARIO;
+
+        const userInfo = document.getElementById("user-info");
+        const loginBtn = document.getElementById("login-btn");
+        const b_usuario = document.getElementById("b_usuario");
+
+        if (nomeUsuario) {
+            b_usuario.innerText = `Olá, ${nomeUsuario.split(' ')[0]}`;
+            userInfo.style.display = "flex";
+            loginBtn.style.display = "none";
+        }
+    });
+
+    function limparSessao() {
+        sessionStorage.clear();
+        window.location.href = "../login.html";
+    }
+</script>

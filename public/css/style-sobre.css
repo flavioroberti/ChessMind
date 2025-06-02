@@ -1,3 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  background: #f4f4f4;
+  overflow-x: hidden;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -10,6 +24,7 @@ html, body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+
 .sobre-mim {
   min-height: 100vh;
   background-color: #1e1e1e;
@@ -17,6 +32,7 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: background-color 0.3s ease;
 }
 
 
@@ -33,6 +49,13 @@ header {
     height: 70px;
 }
 
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 700px;
+}
 .navbar a {
     color: #fff;
     text-decoration: none;
@@ -174,6 +197,7 @@ header {
     color: #3aaf5c;
     font-weight: bold;
     margin-bottom: 10px;
+    text-align: left;
     text-shadow: 1px 1px 5px #000;
 }
 
@@ -186,13 +210,123 @@ header {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.card-voltar-menu{
+.card-voltar-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: linear-gradient(135deg, hwb(130 4% 84%), lab(25.67% -22.95 18.15));
+  box-shadow: 0 -4px 10px rgba(58, 175, 92, 0.5);
+  transition: background 0.4s ease;
+  cursor: pointer;
+}
+
+.botao-voltar {
+  color: #fff;
+  font-weight: 700;
+  font-size: 20px;
+  text-transform: uppercase;
+  padding: 12px 28px;
+  background-color: rgba(0, 0, 0, 0.25);
+  border: 2px solid #fff;
+  border-radius: 15px;
+  transition: all 0.4s ease;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+
+.botao-voltar:hover {
+  transform: scale(1.1);
+  background-color: #fff;
+  color: #3aaf5c;
+  border-color: #3aaf5c;
+  box-shadow: 0 6px 12px rgba(58, 175, 92, 0.8);
+}
+
+.user-info {
     display: flex;
-    justify-content: center;
     align-items: center;
-    padding: 20px;
-    background-color: #1e1e1e;
-    border-top: 2px solid #3aaf5c;
+    gap: 8px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+}
+
+#b_usuario{
+    color: #3aaf5c;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.setinha {
+    font-size: 14px;
+    transform: rotate(90deg);
+    transition: transform 0.3s ease;
+}
+
+.setinha:hover {
+    transform: rotate(90deg) scale(1.2);
+    color: #00ff88;
+}
+
+.secao-escura {
+  background-color: #1e1e1e;
+}
+
+.secao-clara {
+  background-color: #2b2b2b;
+}
+
+.section-dark {
+  background-color: #111;
+  color: #0f0;
+  padding: 50px 20px;
+  transition: background-color 0.3s ease;
+}
+
+.section-light {
+  background-color: #1c1c1c;
+  color: #aaffaa;
+  padding: 50px 20px;
+  transition: background-color 0.3s ease;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+h1, h2 {
+  color: #00ff88;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+p {
+  font-size: 1.1rem;
+  text-align: justify;
+}
+
+.intro-imagens {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
     margin-top: 20px;
-    
+    padding: 20px;
+
+}
+
+.intro-imagens img {
+  width: 200px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,255,0,0.3);
+}
+
+.intro-imagens img:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+  box-shadow: 0 0 15px rgba(0,255,0,0.5);
 }

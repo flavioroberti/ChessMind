@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ChessMind | Táticas</title>
+    <link rel="stylesheet" href="../css/style-taticas.css" />
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img class="logoheader" src="../img/logochessmindbranco.png" alt="Logo Cavalo de Xadrez">
+        </div>
+        <nav class="navbar">
+            <a href="../index.html">Home</a>
+            <span>|</span>
+            <a href="../aprenda.html">Aprenda a jogar</a>
+            <a href="../taticas.html">Táticas</a>
+            <a href="../quiz.html">Quiz</a>
+            <a href="../calculadora.html">Calculadora</a>
+            <div class="user-info" id="user-info" style="display: none;">
+                <span id="b_usuario"></span>
+                <span class="setinha" onclick="limparSessao()" title="Sair">⏷</span>
+            </div>
+            <a class="btn-login" id="login-btn" href="login.html">Login</a>
+
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="introducao">
+            <h1>Táticas de Xadrez</h1>
+            <p>
+                As táticas de xadrez são movimentos curtos e forçados que buscam obter uma vantagem imediata. Elas são
+                essenciais em qualquer partida, mesmo entre grandes mestres. Compreender e aplicar boas táticas pode
+                transformar seu jogo!
+            </p>
+        </section>
+
+        <section class="taticas-dinamicas">
+            <h2>Táticas em Destaque</h2>
+            <div class="card-tatica">
+                <h3>Garfo (Fork)</h3>
+                <p>O cavalo ataca duas peças ao mesmo tempo, forçando o adversário a perder material</p>
+                <iframe width="100%" height="200" src="https://www.youtube.com/embed/mgAbXPBeVEI?si=7uYrwmdHNMyr7-5J"
+                    title="Vídeo de Garfo" frameborder="0" allowfullscreen></iframe>
+            </div>
+
+            <div class="card-tatica">
+                <h3>Cravada (Pin)</h3>
+                <p>Uma peça é impedida de se mover para não expor uma peça mais valiosa</p>
+                <iframe width="100%" height="200" src="https://www.youtube.com/embed/sjpKC9SMvKs?si=dD0hT-bObdWYP_Iy"
+                    title="Vídeo de Cravada" frameborder="0" allowfullscreen></iframe>
+            </div>
+
+            <div class="card-tatica">
+                <h3>Raio X (Skewer)</h3>
+                <p>A peça valiosa é forçada a se mover, revelando outra atrás para captura</p>
+                <iframe width="100%" height="200" src="https://www.youtube.com/embed/2KlDixnZMhM?si=vBUN1N13lMP7MWdt"
+                    title="Vídeo de Raio X" frameborder="0" allowfullscreen></iframe>
+            </div>
+
+            <div class="card-tatica">
+                <h3>Ataque Duplo (Double Attack)</h3>
+                <p>Quando se criam duas ameaças ao mesmo tempo, forçando o oponente a lidar apenas com uma</p>
+                <iframe width="100%" height="200" src="https://www.youtube.com/embed/_2CBlNGLwUw?si=-DD-kZ9UJT2tc30g"
+                    title="Vídeo de Ataque Duplo" frameborder="0" allowfullscreen></iframe>
+            </div>
+
+            <div class="card-tatica">
+                <h3>Ataque Descoberto (Discovered Attack)</h3>
+                <p>Ao mover uma peça, revela-se um ataque de outra peça escondida atrás</p>
+                <iframe width="100%" height="200" src="https://www.youtube.com/embed/dpuK-ft7yPI?si=_74ZlxJ9Obl_r44f"
+                    title="Vídeo de Ataque Descoberto" frameborder="0" allowfullscreen></iframe>
+            </div>
+
+            <div class="card-tatica">
+                <h3>Cheque Descoberto (Discovered Check)</h3>
+                <p>Um ataque descoberto onde o movimento revela um cheque</p>
+                <iframe width="100%" height="200" src="https://www.youtube.com/embed/mrqRu-xd_Zg?si=-5BQVJQryZefvAr1"
+                    title="Vídeo de Cheque Descoberto" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <section class="taticas-menos-conhecidas">
+            <h2>Táticas Menos Conhecidas</h2>
+            <div class="card-tatica">
+                <h3>Zwischenzug</h3>
+                <p>Uma jogada intermediária surpreendente antes da jogada esperada pelo oponente</p>
+                <iframe width="100%" height="200" src="https://www.youtube.com/embed/6U9EpPP2Md8?si=nZ8SoLNZXWVzdjOZ"
+                    title="Vídeo de Zwischenzug" frameborder="0" allowfullscreen></iframe>
+            </div>
+
+            <div class="card-tatica">
+                <h3>Desvio (Deflection)</h3>
+                <p>Força o oponente a mover uma peça-chave, abrindo caminho para um ataque</p>
+                <iframe width="100%" height="200" src="https://www.youtube.com/embed/gHO0FWAztTc?si=2Bub4JMqnfyRhqWk"
+                    title="Vídeo de Deflection" frameborder="0" allowfullscreen></iframe>
+            </div>
+
+            <div class="card-tatica">
+                <h3>Interferência (Interference)</h3>
+                <p>Inserir uma peça entre duas outras para cortar a conexão entre elas</p>
+                <iframe width="100%" height="200" src="https://www.youtube.com/embed/0ehLrDd2pn4?si=VXsfihBaGMStBOzc"
+                    title="Vídeo de Interferência" frameborder="0" allowfullscreen></iframe>
+            </div>
+
+            <div class="card-tatica">
+                <h3>Sacrifício de Qualidade</h3>
+                <p>Trocar uma torre por um bispo ou cavalo, visando vantagem tática ou estratégica</p>
+                <iframe width="100%" height="200" src="https://www.youtube.com/embed/pl9tpoikH3E?si=15bVCSdxyBXBUVab"
+                    title="Vídeo de Sacrifício" frameborder="0" allowfullscreen></iframe>
+            </div>
+
+            <div class="card-tatica">
+                <h3>Overloading (Sobrecarga)</h3>
+                <p>Quando uma peça adversária é forçada a defender mais de uma ameaça e não consegue defender tudo</p>
+                <iframe width="100%" height="200" src="https://www.youtube.com/embed/8dYCnuN7Oh4?si=ry9e5yfmjExPdKCr"
+                    title="Vídeo de Overloading" frameborder="0" allowfullscreen></iframe>
+            </div>
+
+            <div class="card-tatica">
+                <h3>Rei Fugitivo (Decoy ou Lure)</h3>
+                <p>Forçar o rei adversário a se mover para uma casa vulnerável</p>
+                <iframe width="100%" height="200" src="https://www.youtube.com/embed/2tZKhJfuruY?si=LIcHKfKW8Ex8ZAmq"
+                    title="Vídeo de Cheque Descoberto" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <section class="taticas-historicas">
+            <h2>Táticas Históricas Famosas</h2>
+
+            <div class="card-tatica">
+                <h3>O Sacrifício de Torre de Anderssen</h3>
+                <p> Mikhail Tal era mestre em sacrifícios inesperados e táticas explosivas, sacrificando bispos para abrir o rei adversário</p>
+                <iframe width="100%" height="200" src="https://www.youtube.com/embed/AaKWUiiEHgA?si=qgSl0xx3Lu7L1eyE"
+                    title="Vídeo de Anderssen" frameborder="0" allowfullscreen></iframe>
+            </div>
+
+            <div class="card-tatica">
+                <h3>A Cravada Mortal de Fischer</h3>
+                <p>Bobby Fischer usava cravadas de forma precisa para ganhar material com simplicidade cirúrgica</p>
+                <iframe width="100%" height="200" src="https://www.youtube.com/embed/GLToPRvYHvw?si=UjWSwBw8FJk5tqU4"
+                    title="Vídeo de Fischer" frameborder="0" allowfullscreen></iframe>
+            </div>
+
+            <div class="card-tatica">
+                <h3>Tal e o Ataque em F</h3>
+                <p>Inserir uma peça entre duas outras para cortar a conexão entre elas</p>
+                <iframe width="100%" height="200" src="https://www.youtube.com/embed/ztarnYnZFOs?si=xvsyDBQv2vSs2jun"
+                    title="Vídeo de Tal" frameborder="0" allowfullscreen></iframe>
+            </div>
+
+            <div class="card-tatica">
+                <h3>Sacrifício de Qualidade</h3>
+                <p>Trocar uma torre por um bispo ou cavalo, visando vantagem tática ou estratégica</p>
+                <iframe width="100%" height="200" src="https://www.youtube.com/embed/pl9tpoikH3E?si=15bVCSdxyBXBUVab"
+                    title="Vídeo de Sacrifício" frameborder="0" allowfullscreen></iframe>
+            </div>
+
+            <div class="card-tatica">
+                <h3>O Rei no Meio - Kasparov vs Karpov</h3>
+                <p>Kasparov executava ataques brutais aproveitando que o rei adversário ainda estava no centro, aplicando táticas rápidas e coordenadas</p>
+                <iframe width="100%" height="200" src="https://www.youtube.com/embed/tsDJLUL-vo4?si=22xb9ZZyylFbN5QK"
+                    title="Vídeo de Overloading" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <section class="dicas">
+            <h2>Dicas para Usar Táticas</h2>
+            <ul>
+                <li>Procure oportunidades de ataques duplos e peças desprotegidas.</li>
+                <li>Verifique sempre ameaças ocultas e ataques descobertos.</li>
+                <li>Fique atento ao posicionamento do rei adversário.</li>
+                <li>Use o cálculo tático: visualize 2 a 3 lances à frente.</li>
+                <li>Pratique resolvendo exercícios táticos regularmente.</li>
+            </ul>
+        </section>
+
+        <section class="voltar-menu">
+            <div class="card-voltar-menu">
+                <a href="../index.html#conheca" class="botao-voltar-menu">
+                    <div class="botao-voltar">
+                        <img src="../img/home.png" alt="Ícone de Casa" class="home-icon">
+
+                    </div>
+                    <menu></menu>
+                </a>
+            </div>
+        </section>
+    </main>
+
+</body>
+
+</html>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const nomeUsuario = sessionStorage.NOME_USUARIO;
+
+        const userInfo = document.getElementById("user-info");
+        const loginBtn = document.getElementById("login-btn");
+        const b_usuario = document.getElementById("b_usuario");
+
+        if (nomeUsuario) {
+            b_usuario.innerText = `Olá, ${nomeUsuario.split(' ')[0]}`;
+            userInfo.style.display = "flex";
+            loginBtn.style.display = "none";
+        }
+    });
+
+    function limparSessao() {
+        sessionStorage.clear();
+        window.location.href = "../login.html";
+    }
+</script>

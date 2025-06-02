@@ -1,33 +1,125 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="stylesheet" href="../css/style-login.css" />
-  <title>Login - ChessMind</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style-login.css" />
+    <title>ChessMind | Login</title>
+    <script src="./js/sessao.js"></script>
 </head>
+
 <body>
-  <div class="container-login">
-    <div class="imagem-lado-esquerdo"></div>
-    
-    <div class="formulario-login">
-      <h1>Bem-vindo ao ChessMind</h1>
-
-      <input type="email" placeholder="E-mail" />
-      <input type="password" placeholder="Senha" />
-
-      <p class="texto-login">Não possui uma conta? <a href="../public/cadastro.html" class="link-login">Cadastre-se</a></p>
-
-      <div class="botoes-login">
-        <button class="botao-entrar">Entrar</button>
-      </div>
+    <div class="login">
+        <div class="alerta_erro">
+            <div class="card_erro" id="cardErro" style="display: none;">
+                <span id="mensagem_erro"></span>
+            </div>
+        </div>
     </div>
 
-    <a href="../public/index.html" class="botao-voltar-home" title="Voltar para a página inicial">
-      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="black" viewBox="0 0 16 16">
-        <path d="M8.354 1.146a.5.5 0 0 0-.708 0L1 7.793V14.5A1.5 1.5 0 0 0 2.5 16h3A1.5 1.5 0 0 0 7 14.5V11h2v3.5A1.5 1.5 0 0 0 10.5 16h3a1.5 1.5 0 0 0 1.5-1.5V7.793l-6.646-6.647z"/>
-      </svg>
-    </a>
-  </div>
+    <div class="container-login">
+        <div class="imagem-lado-esquerdo"></div>
+
+        <div class="formulario-login">
+            <h1>Bem-vindo ao ChessMind</h1>
+
+            <input type="email" placeholder="E-mail" id="email_input" />
+            <input type="password" placeholder="Senha" id="senha_input" />
+
+            <p class="texto-login">Não possui uma conta?
+                <a href="../cadastro.html" class="link-login">Cadastre-se</a>
+            </p>
+
+            <div class="botoes-login">
+                <button class="botao-entrar" onclick="entrar()">Entrar</button>
+            </div>
+        </div>
+
+        <a href="../index.html" class="botao-voltar-home" title="Voltar para a página inicial">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="black" viewBox="0 0 16 16">
+                <path
+                    d="M8.354 1.146a.5.5 0 0 0-.708 0L1 7.793V14.5A1.5 1.5 0 0 0 2.5 16h3A1.5 1.5 0 0 0 7 14.5V11h2v3.5A1.5 1.5 0 0 0 10.5 16h3a1.5 1.5 0 0 0 1.5-1.5V7.793l-6.646-6.647z" />
+            </svg>
+        </a>
+    </div>
+
+    <div class="loading" id="div_aguardar" style="display:none;">
+        <p>Aguarde...</p>
+    </div>
+
+    <div id="div_erros_login" style="display:none; color:red; text-align:center; margin-top:10px;">
+    </div>
+
 </body>
+
+<script>
+    function entrar() {
+        aguardar();
+
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+
+        if (emailVar === "" || senhaVar === "") {
+            cardErro.style.display = "block";
+            mensagem_erro.innerHTML = "Por favor, preencha todos os campos.";
+            finalizarAguardar();
+            return false;
+        } else {
+            setTimeout(sumirMensagem, 5000);
+        }
+
+        console.log("FORM LOGIN:", emailVar);
+        console.log("FORM SENHA:", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!");
+
+            if (resposta.ok) {
+                console.log(resposta);
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
+
+                    setTimeout(function () {
+                        window.location = "../index.html";
+                    }, 1000); // apenas para exibir o loading
+                });
+
+            } else {
+                console.log("Houve um erro ao tentar realizar o login!");
+                alert("Houve um erro ao tentar realizar o login! Verifique se o e-mail e a senha estão corretos.");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizarAguardar(texto);
+                });
+            }
+        }).catch(function (erro) {
+            console.log(erro);
+            finalizarAguardar("Erro ao conectar com o servidor.");
+        });
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none";
+        div_erros_login.style.display = "none";
+    }
+</script>
+
 </html>

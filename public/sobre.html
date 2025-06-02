@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Missão ChessMind</title>
+    <title>ChessMind | Sobre Mim</title>
     <link rel="stylesheet" href="../css/style-sobre.css" />
 </head>
 
@@ -14,82 +14,206 @@
             <img class="logoheader" src="../img/logochessmindbranco.png" alt="Logo Cavalo de Xadrez">
         </div>
         <nav class="navbar">
-            <a href="../public/index.html">Home</a>
+            <a href="../index.html">Home</a>
             <span>|</span>
-            <a href="#">Aprenda a jogar</a>
-            <a href="#">Táticas</a>
-            <a href="#">Ranking</a>
-            <a href="quiz.html">Quiz</a>
-            <a class="btn-login" href="login.html">Login</a>
+            <a href="../aprenda.html">Aprenda a jogar</a>
+            <a href="../taticas.html">Táticas</a>
+            <a href="../quiz.html">Quiz</a>
+            <a href="../calculadora.html">Calculadora</a>
+            <div class="user-info" id="user-info" style="display: none;">
+                <span id="b_usuario"></span>
+                <span class="setinha" onclick="limparSessao()" title="Sair">⏷</span>
+            </div>
+            <a class="btn-login" id="login-btn" href="login.html">Login</a>
+
         </nav>
     </header>
 
-    <section class="sobre-mim">
-        <div class="card-sobre">
-            <img src="../img/imagemsobremim.jpg" alt="Minha foto" class="foto-sobre">
-            <div class="texto-sobre">
-                <h1>Minha História</h1>
+    <section class="sobre mim">
+        <div class="container">
+            <h1>Sobre Mim</h1>
+        </div>
+        <div class="intro-imagens">
+            <img src="../img/foto1.jpg" alt="Foto1">
+            <img src="../img/foto2.jpg" alt="Foto1">
+            <img src="../img/foto3.jpg" alt="Foto1">
+            <img src="../img/foto4.jpg" alt="Foto1">
+            <img src="../img/foto5.jpg" alt="Foto1">
+            <img src="../img/foto6.jpg" alt="Foto1">
 
-                <p>Olá! Sou o <strong> Flavio</strong>, sou apaixonado por xadrez desde a infância. O jogo, que começou
-                    como
-                    curiosidade, transformou-se em uma ferramenta poderosa de crescimento pessoal.</p>
 
-                <p>Descobri que o xadrez vai além do tabuleiro, ele ensina paciência, estratégia e autoconhecimento.
-                    Cada partida, seja vitória ou derrota, me tornou mais forte.</p>
-
-                <p>Hoje,<strong> compartilho essa paixão</strong> com quem está começando ou buscando coisas novas.
-                    Acredito que o xadrez é para
-                    todos que desejam evoluir, pensar com clareza e superar desafios.</p>
-
-                <p class="frase-final">♚ Espero que minha jornada inspire a sua! ♚</p>
-            </div>
         </div>
     </section>
+
+    <section class="section-dark">
+        <div class="container">
+            <h2>Quem sou eu?</h2>
+            <p>
+                Olá! Meu nome é <strong>Flavio Roberti</strong> e, desde muito novo, sempre fui movido por curiosidade e
+                desafios. Enquanto outras crianças se interessavam por videogames e esportes, eu me encantava por jogos
+                de raciocínio, como dama, sudoku e, especialmente, <strong>xadrez</strong>. O que muitos chamam de
+                "jogos de idosos", para mim sempre foram ferramentas de desenvolvimento humano: lógica, paciência,
+                superação, análise... isso sempre me fascinou.
+            </p>
+        </div>
+    </section>
+
+    <section class="section-light">
+        <div class="container">
+            <h2>Meu refúgio após a separação</h2>
+            <p>
+                Quando meus pais se separaram, encontrei no xadrez um verdadeiro refúgio. Comecei a jogar cada vez mais
+                na escola, e isso me levou a vencer duas vezes o campeonato entre as turmas. Um tabuleiro de aniversário
+                se tornou meu melhor presente e meu principal companheiro. Jogava comigo mesmo, inventava cenários,
+                treinava possibilidades. Afinal, era raro encontrar crianças que compartilhassem essa paixão.
+            </p>
+        </div>
+    </section>
+
+    <section class="section-dark">
+        <div class="container">
+            <h2>As tardes com minha vó</h2>
+            <p>
+                Após as aulas, ia para a casa do meu pai e passava as tardes jogando com minha avó. Ela era minha grande
+                parceira de xadrez e mesmo sem tanta experiência, se esforçava bravamente para me vencer. Foram
+                momentos incríveis, cheios de riso e aprendizado. Infelizmente, ela faleceu de câncer poucos anos
+                depois. Mas cada partida com ela mora comigo até hoje.
+            </p>
+        </div>
+    </section>
+
+    <section class="section-light">
+        <div class="container">
+            <h2>Convites e oportunidades</h2>
+            <p>
+                Cheguei a ser convidado para integrar equipes de xadrez em diferentes regiões do Brasil como o Sul e o
+                Nordeste. Apesar disso, nunca pensei no xadrez como profissão. Sempre foi algo mais íntimo, quase
+                espiritual. Era o jogo que me ajudava a me entender, a me concentrar, a evoluir como ser humano. Xadrez
+                não era só um passatempo... era parte de mim.
+            </p>
+        </div>
+    </section>
+
+    <section class="section-dark">
+        <div class="container">
+            <h2>Uma pausa... e um retorno</h2>
+            <p>
+                Com o tempo e as responsabilidades da vida adulta, me afastei do xadrez. Estudo, trabalho, pressões,
+                tudo foi tomando espaço. Mas a faculdade reacendeu essa chama. Em 2025, voltei a jogar diariamente: seja
+                pelo celular, pelo computador ou no meu velho tabuleiro. Me reencontrei. Jogando contra mim mesmo,
+                tentando me superar, redescobrindo a beleza de cada jogada.
+            </p>
+        </div>
+    </section>
+
+    <section class="section-light">
+        <div class="container">
+            <h2>Família e apoio</h2>
+            <p>
+                Minha mãe sempre achou lindo meu interesse por jogos de lógica, e me apoiou desde o início. Meu irmão
+                também tentou jogar comigo, mas ele era mais ligado em computadores e acabava sendo vencido
+                rapidamente. Mesmo assim, eram momentos únicos. A presença deles fez tudo ainda mais especial.
+            </p>
+        </div>
+    </section>
+
+    <section class="section-dark">
+        <div class="container">
+            <h2>Mais do que um jogo</h2>
+            <p>
+                O xadrez me ensinou lições que carrego na vida: saber perder, planejar antes de agir, pensar nos outros
+                antes de tomar decisões, e nunca subestimar um adversário. Não é apenas um jogo. É uma filosofia. É uma
+                escola de virtudes. E por isso nasceu este site, como forma de compartilhar esse amor com o mundo.
+            </p>
+        </div>
+    </section>
+
+    <section class="section-light">
+        <div class="container">
+            <h2>Uma nova missão</h2>
+            <p>
+                Meu objetivo com este projeto é simples e sincero: fazer com que outras pessoas sintam o mesmo
+                encantamento que eu senti. Que tenham a oportunidade de aprender, crescer, desafiar a si mesmas e, quem
+                sabe, se apaixonar por esse jogo tão antigo quanto essencial. O xadrez mudou minha vida e eu espero
+                que, de alguma forma, ele possa mudar a sua também.
+            </p>
+        </div>
+    </section>
+
 
     <section class="curiosidade">
         <div class="card-curiosidade">
-            <h1>Curiosidade</h1>
+            <h1>Curiosidades do Meu Caminho no Xadrez</h1>
 
             <div class="curiosidade-item">
                 <h2>Peça Favorita</h2>
-                <p>Minha peça favorita é o Cavalo. Ele representa um símbolo de defesa, mas também pode ser muito
-                    matador!</p>
+                <p>
+                    Entre todas as peças, o <strong>Cavalo</strong> sempre me encantou. Seus movimentos inesperados e
+                    únicos em
+                    forma de “L” representam criatividade e imprevisibilidade. Ele entra por caminhos que ninguém
+                    espera e pode
+                    virar uma partida com um único salto. Para mim, o Cavalo é símbolo de estratégia ousada e
+                    inteligência fora do padrão.
+                </p>
             </div>
 
             <div class="curiosidade-item">
-                <h2>Primeira Experiência</h2>
-                <p>A primeira vez que joguei xadrez foi em um tabuleiro de madeira antigo do meu avô, e foi amor à
-                    primeira vista!</p>
+                <h2>Minha Primeira Partida</h2>
+                <p>
+                    Tudo começou com um tabuleiro antigo de madeira que pertencia ao meu avô. Era simples, mas cheio de
+                    história.
+                    Naquela tarde chuvosa, ele me ensinou os primeiros movimentos e, sem perceber, plantou a semente de
+                    uma paixão
+                    que cresceria comigo por toda a vida. Foi mais do que aprender um jogo foi criar um vínculo entre
+                    gerações.
+                </p>
             </div>
 
             <div class="curiosidade-item">
-                <h2>Estratégia Representativa</h2>
-                <p>"Falando em estratégias, gosto muito do Gambito de Dama, pois ele representa coragem e entrega. É
-                    sobre abrir mão de algo no início para conquistar espaço e confiança no tabuleiro, assim como na
-                    vida.</p>
+                <h2>Uma Estratégia que Me Define</h2>
+                <p>
+                    Gambito de Dama <br>
+                    Abrir mão de algo valioso no início para conquistar algo maior depois.
+                    Essa
+                    estratégia não é apenas uma jogada no xadrez, é uma filosofia de vida. Ela me ensinou sobre
+                    sacrifício,
+                    visão a longo prazo e coragem para tomar decisões difíceis. É assim que aprendi a enxergar cada
+                    obstáculo:
+                    como uma abertura para crescer.
+                </p>
             </div>
 
             <div class="curiosidade-item">
-                <h2>Melhor Partida</h2>
-                <p>Uma das melhores partidas que já joguei foi com meu colega Kauan Luna, onde eu e ele voltamos o
-                    caminho todo jogando e pensando em cada movimento, e no final, ele ganhou de mim com um xeque-mate
-                    perfeito!</p>
+                <h2>Partida Inesquecível</h2>
+                <p>
+                    Uma das partidas que mais marcou minha jornada foi contra meu amigo <strong>Kauan Luna</strong>.
+                    Jogamos a ida e a volta do
+                    caminho para casa no tabuleiro, analisando cada lance, discutindo ideias e rindo dos erros. No
+                    final, ele me deu um
+                    xeque-mate brilhante e eu fiquei feliz por perder. Não pela derrota, mas porque aquele momento foi
+                    puro xadrez: conexão, desafio e aprendizado.
+                </p>
             </div>
 
             <div class="curiosidade-item">
-                <h2>Filosofia do Jogo</h2>
-                <p>Eu me encontrei no Xadrez, virou parte de mim, há mais de 10 anos jogar xadrez faz parte da minha
-                    vida e rotina, sinto que o xadrez agregou em vários ambientes da minha vida, como no trabalho, na
-                    escola e até mesmo em casa.</p>
+                <h2>O Xadrez em Mim</h2>
+                <p>
+                    Mais do que um jogo, o xadrez virou um espelho da minha mente. Ele me trouxe paciência, foco e
+                    estratégia, mas também humildade. Com mais de 10 anos de prática, percebo como ele influenciou minha
+                    vida além do
+                    tabuleiro na escola, no trabalho e nas relações. Jogar xadrez é como respirar: silencioso, vital e
+                    transformador.
+                </p>
             </div>
         </div>
     </section>
 
+
     <section class="voltar-menu">
         <div class="card-voltar-menu">
-            <a href="../public/index.html#conheca" class="botao-voltar-menu">
+            <a href="../index.html#conheca" class="botao-voltar-menu">
                 <div class="botao-voltar">
-                <img src="../img/home.png" alt="Ícone de Casa" class="home-icon">
+                    <img src="../img/home.png" alt="Ícone de Casa" class="home-icon">
 
                 </div>
                 <menu></menu>
@@ -101,3 +225,24 @@
 </body>
 
 </html>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const nomeUsuario = sessionStorage.NOME_USUARIO;
+
+        const userInfo = document.getElementById("user-info");
+        const loginBtn = document.getElementById("login-btn");
+        const b_usuario = document.getElementById("b_usuario");
+
+        if (nomeUsuario) {
+            b_usuario.innerText = `Olá, ${nomeUsuario.split(' ')[0]}`;
+            userInfo.style.display = "flex";
+            loginBtn.style.display = "none";
+        }
+    });
+
+    function limparSessao() {
+        sessionStorage.clear();
+        window.location.href = "../login.html";
+    }
+</script>

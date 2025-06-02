@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/dashboard.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Press+Start+2P&family=VT323&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
+    
+    <script src="../js/dashboard.js"></script>
+    <script src="../js/sessao.js"></script>
+    
+
+    <title>ChessMind | Dashboard</title>
+</head>
+
+<body
+    onload="validarUsuario(); exibirMMRAtual(); exibirMaiorMMR(); exibirMediaAcertos(); exibirMaiorPontuacao();exibirRanking(); exibirEvolucaoDesempenho();">
+
+    <div class="containerDashboard">
+        <nav class="menuLateral">
+            <h2 class="tituloMenu">ChessMind</h2>
+            <a href="../index.html" class="botao"><i class="fa-solid fa-house"></i> Início</a>
+            <a href="../quiz.html" class="botao"><i class="fa-solid fa-gamepad"></i> Quiz</a>
+            <a href="../calculadora.html" class="botao"><i class="fa-solid fa-trophy"></i> Calculadora</a>
+            <a class="botao" onclick="sairSessao()"><i class="fa-solid fa-right-from-bracket"></i> Sair</a>
+        </nav>
+
+        <main class="conteudoDashboard">
+            <h2 id="painel_usuario" class="painel-usuario-titulo"></h2>
+            <section class="kpi-section">
+                <div class="kpi-card">
+                    <p class="kpi-title">🧠 Média de Acertos</p>
+                    <div class="kpi-value" id="user_media_acertos"></div>
+                </div>
+                <div class="kpi-card">
+                    <p class="kpi-title">📈 Maior Pontuação</p>
+                    <div class="kpi-value" id="user_maior_pontuacao"></div>
+                </div>
+                <div class="kpi-card">
+                    <p class="kpi-title">🏆 MMR Atual</p>
+                    <div class="kpi-value" id="user_mmr_atual"></div>
+                </div>
+                <div class="kpi-card">
+                    <p class="kpi-title">📊 Maior MMR</p>
+                    <div class="kpi-value" id="user_maior_mmr"></div>
+                </div>
+
+            </section>
+
+
+            <div class="dashboard-row">
+                <section class="chart-section">
+                    <div class="card-chart">
+                        <h2>Evolução de Desempenho no Quiz</h2>
+                        <canvas id="graficoEvolucaoDesempenho"></canvas>
+                    </div>
+
+                    <!--<div class="card-chart">
+                        <h2>Evolução do MMR</h2>
+                        <canvas id="graficoEvolucaoMMR"></canvas>
+                    </div> -->
+
+                </section>
+
+                <section class="ranking-section">
+                    <div class="card-ranking">
+                        <h2>Ranking Pontuação</h2>
+                        <div id="user_rank">
+                            <table id="ranking_table">
+                                <thead>
+                                    <tr>
+                                        <th>Rank</th>
+                                        <th>Nome</th>
+                                        <th>Acertos</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+
+</body>
+
+</html>

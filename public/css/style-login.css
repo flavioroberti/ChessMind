@@ -1,10 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  background: #f4f4f4;
+  overflow-x: hidden;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body, html {
+body,
+html {
   height: 100%;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -14,9 +29,9 @@ body, html {
   height: 100vh;
 }
 
-.imagem-lado-direito {
-  flex: 1;
-  background-image: url('https://images.unsplash.com/photo-1600375593482-9a8d79ad53c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=934&q=80');
+.imagem-lado-esquerdo {
+  width: 50%;
+  background-image: url('../img/background-chess.png');
   background-size: cover;
   background-position: center;
   background-color: #2c2c2c;
@@ -57,7 +72,7 @@ body, html {
   font-size: 14px;
   color: #ccc;
   margin-top: 10px;
-  margin-bottom: 25px; /* Espaço que substitui o <br> */
+  margin-bottom: 25px;
 }
 
 .texto-login a {
@@ -75,8 +90,7 @@ body, html {
   gap: 20px;
 }
 
-.botao-entrar,
-.botao-cadastrar {
+.botao-entrar {
   background-color: #3aaf5c;
   color: #000;
   border: none;
@@ -90,6 +104,46 @@ body, html {
 .botao-entrar:hover,
 .botao-cadastrar:hover {
   background-color: #5fdc7d;
+}
+
+.loading {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.loading p {
+  color: white;
+  font-size: 24px;
+}
+
+#div_erros_login {
+  display: none;
+  color: red;
+  margin-top: 10px;
+  text-align: center;
+}
+
+
+.botao-voltar-home {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 28px;
+  text-decoration: none;
+  background-color: #3aaf5c;
+  color: #000;
+  padding: 10px 14px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s, transform 0.2s;
 }
 
 .botao-voltar-home {

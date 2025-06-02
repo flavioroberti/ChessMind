@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  background: #f4f4f4;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+html {
+  height: 100%;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000;
+  padding: 20px 40px;
+  border-bottom: 2px solid #3aaf5c;
+  position: relative;
+  z-index: 2; 
+}
+
+.logoheader {
+  height: 70px;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 700px;
+}
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 12px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: #3aaf5c;
+}
+
+.navbar span {
+    color: #555;
+    margin: 0 8px;
+}
+
+.btn-login {
+  background-color: #3aaf5c;
+  color: #000;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+.btn-login:hover {
+  background-color: #5fdc7d;
+  color: #000 !important;
+}
+
+.background-chess {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.08; 
+  z-index: 0; 
+  pointer-events: none; 
+}
+
+.quiz-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../img/background-chess.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  z-index: 1;
+}
+
+
+.quiz-card {
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+  padding: 30px 40px;
+  max-width: 800px;
+  width: 100%;
+  text-align: center;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: #3a3a3a;
+  font-weight: 600;
+  font-size: 28px; 
+}
+
+#progresso {
+  font-size: 18px; 
+  margin-bottom: 20px;
+  color: #666;
+}
+
+.question {
+  display: none;
+  text-align: left;
+}
+
+.question.active {
+  display: block;
+}
+
+.question p {
+  font-weight: 600;
+  margin-bottom: 10px;
+  font-size: 18px; 
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  background-color: #f1f1f1;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-size: 16px; 
+}
+
+label:hover {
+  background-color: #e0e0e0;
+}
+
+button {
+  margin-top: 15px;
+  padding: 12px 25px;
+  background-color: #3aaf5c;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 18px; 
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+  background-color: #2e924b;
+  transform: scale(1.05);
+}
+
+#resultado {
+  margin-top: 25px;
+  font-size: 20px; 
+  font-weight: 700;
+}
+
+.card-voltar-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: linear-gradient(135deg, hwb(130 4% 84%), lab(25.67% -22.95 18.15));
+  box-shadow: 0 -4px 10px rgba(58, 175, 92, 0.5);
+  transition: background 0.4s ease;
+  cursor: pointer;
+}
+
+.botao-voltar {
+  color: #fff;
+  font-weight: 700;
+  font-size: 20px;
+  text-transform: uppercase;
+  padding: 12px 28px;
+  background-color: rgba(0, 0, 0, 0.25);
+  border: 2px solid #fff;
+  border-radius: 15px;
+  transition: all 0.4s ease;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+
+.botao-voltar:hover {
+  transform: scale(1.1);
+  background-color: #fff;
+  color: #3aaf5c;
+  border-color: #3aaf5c;
+  box-shadow: 0 6px 12px rgba(58, 175, 92, 0.8);
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+}
+
+#b_usuario{
+    color: #3aaf5c;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.setinha {
+    font-size: 14px;
+    transform: rotate(90deg);
+    transition: transform 0.3s ease;
+}
+
+.setinha:hover {
+    transform: rotate(90deg) scale(1.2);
+    color: #00ff88;
+}
+
+.quiz-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+}
+
+.btn-dashboard {
+    background-color: #00ff88;
+    color: black;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn-dashboard:hover {
+    background-color: #00cc6a;
+  }
+
+  .resultado-scroll {
+  max-height: 250px; 
+  overflow-y: auto;
+  margin-top: 25px;
+  font-size: 20px;
+  font-weight: 700;
+  padding-right: 10px;
+  text-align: left;
+}
+
+.resultado-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.resultado-scroll::-webkit-scrollbar-thumb {
+  background-color: #3aaf5c;
+  border-radius: 3px;
+}
