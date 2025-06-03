@@ -71,7 +71,8 @@ const resultadoDiv = document.getElementById("resultado");
 const progresso = document.getElementById("progresso");
 
 function carregarPerguntas() {
-  perguntas.forEach((q, index) => {
+  for (let index = 0; index < perguntas.length; index++) {
+    const q = perguntas[index];
     const div = document.createElement("div");
     div.classList.add("question");
     if (index === 0) div.classList.add("active");
@@ -80,11 +81,12 @@ function carregarPerguntas() {
     p.textContent = q.pergunta;
     div.appendChild(p);
 
-    q.opcoes.forEach((opcao, i) => {
+    for (let i = 0; i < q.opcoes.length; i++) {
+      const opcao = q.opcoes[i];
       const label = document.createElement("label");
       label.innerHTML = `<input type="radio" name="pergunta${index}" value="${opcao}"> ${opcao}`;
       div.appendChild(label);
-    });
+    }
 
     const btn = document.createElement("button");
     btn.type = "button";
@@ -93,8 +95,9 @@ function carregarPerguntas() {
     div.appendChild(btn);
 
     quizForm.appendChild(div);
-  });
+  }
 }
+
 
 function proximaPergunta() {
   const perguntaDivs = document.querySelectorAll(".question");

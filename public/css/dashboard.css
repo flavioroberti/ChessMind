@@ -7,10 +7,18 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+html, body {
+    overflow: hidden;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     background-color: #1e1e1e;
     color: #fff;
     overflow-x: hidden;
+    min-height: 100vh;
 }
 
 header {
@@ -30,12 +38,68 @@ header {
     color: #fff;
     text-decoration: none;
     margin: 0 12px;
-    font-weight: bold;
-    transition: color 0.3s;
+    font-weight: 600;
+    transition: color 0.3s ease;
 }
 
 .navbar a:hover {
     color: #3aaf5c;
+}
+
+.containerDashboard {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.menuLateral {
+    width: 220px;
+    background-color: #121212;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    border-right: 2px solid #3aaf5c;
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+.menuLateral .tituloMenu {
+    font-weight: 600;
+    font-size: 22px;
+    color: #3aaf5c;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.menuLateral .botao {
+    color: #fff;
+    background: none;
+    text-align: left;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.menuLateral .botao:hover {
+    color: #3aaf5c;
+}
+
+.conteudoDashboard {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 40px;
+    overflow-y: hidden;
+    height: 100vh;
+    box-sizing: border-box;
 }
 
 .kpi-section {
@@ -43,7 +107,8 @@ header {
     flex-wrap: wrap;
     justify-content: center;
     gap: 25px;
-    padding: 30px 20px;
+    padding: 0 20px 20px 20px;
+    flex: 0 0 120px;
 }
 
 .kpi-card {
@@ -54,7 +119,7 @@ header {
     width: 250px;
     text-align: center;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .kpi-card:hover {
@@ -70,32 +135,72 @@ header {
 
 .kpi-value {
     font-size: 28px;
-    font-weight: bold;
+    font-weight: 700;
+}
+
+.dashboard-row {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    flex-wrap: nowrap; 
+    width: 100%;
+    padding: 30px 0 0 20px;
+    gap: 20px;
+    box-sizing: border-box;
+    margin-top: -25px;
+}
+
+.chart-section {
+    flex: 2 1 500px;
+    min-width: 300px;
+    padding: 0 20px;
+}
+
+.card-chart {
+    background-color: #2a2a2a;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    color: #fff;
+    height: 100%; 
+    overflow-y: auto;
+    max-height: calc(100vh - 200px);
+    display: flex;          
+    flex-direction: column; 
+}
+
+.card-chart h2 {
+    font-size: 30px;
+    margin-bottom: 25px;
+    color: #a0d468;
 }
 
 .ranking-section {
-    padding: 40px 20px;
-    text-align: center;
+    flex: 1 1 300px;
+    min-width: 250px;
+    padding: 0 20px;
 }
 
 .card-ranking {
-    max-width: 900px;
-    margin: 0 auto;
     background-color: #2a2a2a;
     padding: 30px 25px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
     color: #fff;
-    border-color: #3aaf5c;
-    border-style: solid;
-    border-width: 2px;
+    border: 2px solid #3aaf5c;
+    height: 100%; 
+    overflow-y: auto;
+    box-sizing: border-box;
     transition: border-color 0.3s ease;
+    display: flex;          
+    flex-direction: column; 
 }
 
 .card-ranking h2 {
     font-size: 30px;
     margin-bottom: 20px;
     color: #3aaf5c;
+    text-align: center;
 }
 
 .ranking-list {
@@ -105,36 +210,49 @@ header {
 
 .ranking-list li {
     font-size: 18px;
-    padding: 10px;
+    padding: 10px 0;
     border-bottom: 1px solid #444;
     display: flex;
     justify-content: space-between;
 }
 
-.chart-section {
-    padding: 40px 20px;
-    text-align: center;
+.painel-usuario-titulo {
+    font-size: 18px;
+    color: hwb(115 73% 18%);
+    margin: 10px 0;
+    position: relative;
+    padding-left: 15px;
+    font-weight: 500;
+    flex: 0 0 auto;
+    margin-top: -10px;
 }
 
-.card-chart {
-    max-width: 900px;
-    margin: 0 auto;
-    background-color: #2a2a2a;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+.painel-usuario-titulo::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 5px;
+    bottom: 5px;
+    width: 4px;
+    background: #3aaf5c;
+    border-radius: 2px;
+}
+
+#user_rank {
+    font-size: 18px;
     color: #fff;
-}
-
-.card-chart h2 {
-    font-size: 30px;
-    margin-bottom: 25px;
-    color: #a0d468;
-}
-
-canvas {
-    max-width: 100%;
-    height: auto;
+    margin-bottom: 10px;
+    font-weight: 600;
+    text-align: center;
+    padding: 10px;
+    background-color: #2a2a2a;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease;
+    display: block;
+    margin: 20px auto;
+    width: fit-content;
+     
 }
 
 .card-voltar-menu {
@@ -168,132 +286,17 @@ canvas {
     box-shadow: 0 6px 12px rgba(58, 175, 92, 0.8);
 }
 
-.containerDashboard {
-    display: flex;
-    height: 100vh;
-    width: 100vw;
-    overflow: hidden;
-}
-
-.menuLateral {
-    width: 220px;
-    background-color: #121212;
-    padding: 30px 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    border-right: 2px solid #3aaf5c;
-    height: 100vh;
-}
-
-.menuLateral .tituloMenu {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-    font-size: 22px;
-    color: #3aaf5c;
-    margin-bottom: 30px;
-    text-align: center;
-}
-
-.menuLateral .botao {
-    color: #fff;
-    background: none;
-    text-align: left;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-    padding: 10px 0;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    transition: color 0.3s;
-}
-
-.menuLateral .botao:hover {
-    color: #3aaf5c;
-}
-
-.conteudoDashboard {
-    flex: 1;
-    padding: 30px 40px;
-    overflow-y: auto;
-}
-
-.dashboard-row {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 30px;
-}
-
-.chart-section {
-    flex: 2;
-    min-width: 500px;
-}
-
-.ranking-section {
-    flex: 1;
-    min-width: 300px;
-}
-
-.conteudoDashboard {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    padding: 30px 40px;
-    overflow-y: auto;
-}
-
-.kpi-section {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 25px;
-    padding: 30px 20px;
-}
-
-.dashboard-row {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    width: 96.7%;
-    margin-left: 20px;
-    margin-top: -50px;
-    padding: 30px;
-    gap: 20px;
-}
-.card-chart,
-.card-ranking {
-    height: 100%;
-    overflow: auto;
-}
-
 .painel-usuario-titulo {
-    font-size: 24px;
+    font-size: 18px;
     color: hwb(115 73% 18%);
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin: 10px 0;
     position: relative;
     padding-left: 15px;
     font-weight: 500;
+    flex: 0 0 auto;
+    margin-top: -10px;
 }
 
-#user_rank {
-    font-size: 18px;
-    color: #fff;
-    margin-bottom: 10px;
-    font-weight: 600;
-    text-align: center;
-    padding: 10px;
-    background-color: #2a2a2a;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-    transition: background-color 0.3s ease;
-}
 .painel-usuario-titulo::before {
     content: '';
     position: absolute;
@@ -305,3 +308,12 @@ canvas {
     border-radius: 2px;
 }
 
+.painel-usuario-email {
+    display: block;
+    font-size: 14px;
+    color: #a0d468;
+    font-weight: 400;
+    margin-top: 4px;
+    opacity: 0.8;
+    font-family: 'Montserrat', sans-serif;
+}

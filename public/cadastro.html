@@ -32,7 +32,25 @@
       </div>
     </div>
 
-    <div class="imagem-lado-direito"></div>
+    <div class="imagem-lado-direito">
+      <div class="orientacoes-cadastro">
+        <h3>Orientações para Cadastro:</h3>
+        <ul>
+          <li>Nome com pelo menos 3 letras e sem números ou símbolos</li>
+          <li>Email com "@" e domínio válido (ex: .com, .org)</li>
+          <li>Senha com no mínimo 6 caracteres</li>
+          <li>Deve conter:
+            <ul>
+              <li>1 letra maiúscula</li>
+              <li>1 letra minúscula</li>
+              <li>1 número</li>
+              <li>1 caractere especial (!@#$...)</li>
+            </ul>
+          </li>
+          <li>Confirmação de senha igual à senha</li>
+        </ul>
+      </div>
+    </div>
 
     <a href="../index.html" class="botao-voltar-home" title="Voltar para a página inicial">
       <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="black" viewBox="0 0 16 16">
@@ -44,58 +62,139 @@
 </body>
 
 </html>
-<script>
-  function cadastrar() {
-    // aguardar();
 
-    //Recupere o valor da nova input pelo nome do id
-    // Agora vá para o método fetch logo abaixo
-    var nomeVar = nome_input.value;
-    var emailVar = email_input.value;
+<script>
+  const cardErro = document.getElementById('cardErro');
+  const mensagem_erro = document.getElementById('mensagem_erro');
+
+  function mostrarMensagem(texto) {
+    mensagem_erro.innerHTML = texto;
+    cardErro.classList.add('show');
+
+    setTimeout(() => {
+      cardErro.classList.remove('show');
+    }, 2000);
+  }
+
+  function validarEmailSimples(email) {
+    if (email.indexOf(' ') !== -1) return false;
+
+    const partes = email.split('@');
+    if (partes.length !== 2) return false;
+
+    const local = partes[0];
+    const dominio = partes[1];
+
+    if (local.length === 0 || dominio.length === 0) return false;
+
+    if (dominio.indexOf('.') === -1) return false;
+
+    const validChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@._-";
+    for (let i = 0; i < email.length; i++) {
+      if (validChars.indexOf(email[i]) === -1) {
+        return false;
+      }
+    }
+
+    return true;
+  }
+
+  function validarCadastro(nome, email, senha, confirmacaoSenha) {
+    if (nome.length < 3) {
+      return { valido: false, mensagem: "O nome deve ter pelo menos 3 caracteres." };
+    }
+
+    var caracteresInvalidos = "!@#$%¨&*()_+=-[]{}|\\;:'\",.<>/?1234567890";
+    for (var i = 0; i < nome.length; i++) {
+      if (caracteresInvalidos.indexOf(nome[i]) !== -1) {
+        return { valido: false, mensagem: "O nome não pode conter números ou caracteres especiais." };
+      }
+    }
+
+    if (!email.includes("@")) {
+      return { valido: false, mensagem: "O email deve conter '@'." };
+    }
+
+    var dominiosValidos = [".com", ".com.br", ".org", ".net"];
+    var dominioValido = false;
+    for (var j = 0; j < dominiosValidos.length; j++) {
+      if (email.endsWith(dominiosValidos[j])) {
+        dominioValido = true;
+        break;
+      }
+    }
+    if (!dominioValido) {
+      return { valido: false, mensagem: "O email deve terminar com um domínio válido (ex: .com, .com.br)." };
+    }
+
+    // Substituição da validação por regex para validação simples manual:
+    if (!validarEmailSimples(email)) {
+      return { valido: false, mensagem: "O email contém caracteres inválidos." };
+    }
+
+    if (senha.length < 6) {
+      return { valido: false, mensagem: "A senha deve ter pelo menos 6 caracteres." };
+    }
+
+    var temMaiuscula = false;
+    var temMinuscula = false;
+    var temNumero = false;
+    var temEspecial = false;
+    var especiais = "!@#$%¨&*()_+=-[]{}|\\;:'\",.<>/?";
+
+    var k = 0;
+    while (k < senha.length) {
+      var ch = senha[k];
+      if (ch >= 'A' && ch <= 'Z') temMaiuscula = true;
+      else if (ch >= 'a' && ch <= 'z') temMinuscula = true;
+      else if (ch >= '0' && ch <= '9') temNumero = true;
+      else if (especiais.indexOf(ch) !== -1) temEspecial = true;
+      k++;
+    }
+
+    if (!temMaiuscula) {
+      return { valido: false, mensagem: "A senha deve conter ao menos uma letra maiúscula." };
+    }
+    if (!temMinuscula) {
+      return { valido: false, mensagem: "A senha deve conter ao menos uma letra minúscula." };
+    }
+    if (!temNumero) {
+      return { valido: false, mensagem: "A senha deve conter ao menos um número." };
+    }
+    if (!temEspecial) {
+      return { valido: false, mensagem: "A senha deve conter ao menos um caractere especial." };
+    }
+
+    if (senha !== confirmacaoSenha) {
+      return { valido: false, mensagem: "A confirmação de senha não confere." };
+    }
+
+    return { valido: true, mensagem: "" };
+  }
+
+  function cadastrar() {
+    var nomeVar = nome_input.value.trim();
+    var emailVar = email_input.value.trim();
     var senhaVar = senha_input.value;
     var confirmacaoSenhaVar = confirmacao_senha_input.value;
 
-
-    // Verificando se há algum campo em branco
-    if (
-      nomeVar == "" ||
-      emailVar == "" ||
-      senhaVar == "" ||
-      confirmacaoSenhaVar == ""
-    ) {
-      cardErro.style.display = "block";
-      mensagem_erro.innerHTML =
-        "(Preencha todos os campos para realizar o cadastro)";
-
-      finalizarAguardar();
+    if (!nomeVar || !emailVar || !senhaVar || !confirmacaoSenhaVar) {
+      mostrarMensagem("(Preencha todos os campos para realizar o cadastro)");
       return false;
-    } else {
-      setInterval(sumirMensagem, 5000);
-    }
-    if (
-      nomeVar.length < 1 ||
-      emailVar.includes("@") == false ||
-      senhaVar.length < 6 ||
-      confirmacaoSenhaVar != senhaVar
-    ) {
-      cardErro.style.display = "block";
-      mensagem_erro.innerHTML = "(Digite os valores de forma correta nos campos)";
-
-      finalizarAguardar();
-      return false;
-    } else {
-      setInterval(sumirMensagem, 5000)
     }
 
-    // Enviando o valor da nova input
+    var resultadoValidacao = validarCadastro(nomeVar, emailVar, senhaVar, confirmacaoSenhaVar);
+    if (!resultadoValidacao.valido) {
+      mostrarMensagem("(" + resultadoValidacao.mensagem + ")");
+      return false;
+    }
+
     fetch("/usuarios/cadastrar", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        // crie um atributo que recebe o valor recuperado aqui
-        // Agora vá para o arquivo routes/usuario.js
         nomeServer: nomeVar,
         emailServer: emailVar,
         senhaServer: senhaVar,
@@ -105,30 +204,27 @@
         console.log("resposta: ", resposta);
 
         if (resposta.ok) {
-          cardErro.style.display = "block";
-
-          mensagem_erro.innerHTML =
-            "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
-
+          mostrarMensagem("Cadastro realizado com sucesso! Redirecionando para tela de Login...");
           setTimeout(() => {
             window.location = "login.html";
-          }, "2000");
-
+          }, 2000);
           limparFormulario();
-          finalizarAguardar();
         } else {
           throw "Houve um erro ao tentar realizar o cadastro!";
         }
       })
       .catch(function (resposta) {
         console.log(`#ERRO: ${resposta}`);
-        finalizarAguardar();
       });
 
     return false;
   }
 
-  function sumirMensagem() {
-    cardErro.style.display = "none";
+  function limparFormulario() {
+    nome_input.value = "";
+    email_input.value = "";
+    senha_input.value = "";
+    confirmacao_senha_input.value = "";
   }
+
 </script>

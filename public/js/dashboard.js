@@ -5,8 +5,7 @@ function validarUsuario() {
     var textoPainel = document.getElementById("painel_usuario");
 
     if (email != null && nome != null) {
-        textoPainel.innerHTML = `Painel de ${nome}<br>
-            ${email}`;
+        textoPainel.innerHTML = `Painel de ${nome}<span class="painel-usuario-email">${email}</span>`;
     }
 }
 
