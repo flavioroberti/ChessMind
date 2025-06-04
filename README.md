@@ -70,7 +70,7 @@ O projeto segue o padrão MVC:
 
 ```bash
 # Clone o repositório
-git clone https://github.com/seuusuario/ChessMind.git
+git clone https://github.com/flavioroberti/ChessMind.git
 
 # Acesse a pasta do projeto
 cd ChessMind
