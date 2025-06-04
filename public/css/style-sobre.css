@@ -161,55 +161,6 @@ header {
     margin-top: 20px;  
 }
 
-.curiosidade {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 60px 20px;
-    background-color: #2b2b2b;
-}
-
-.card-curiosidade {
-    background-color: #333;
-    border-radius: 15px;
-    padding: 30px;
-    max-width: 900px;
-    width: 100%;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    color: #f2f2f2;
-}
-
-.card-curiosidade h1 {
-    font-size: 40px;
-    color: #3aaf5c;
-    margin-bottom: 20px;
-    text-align: center;
-    font-weight: 700;
-    text-shadow: 2px 2px 6px #000;
-}
-
-.curiosidade-item {
-    margin-bottom: 25px;
-}
-
-.curiosidade-item h2 {
-    font-size: 28.8px;
-    color: #3aaf5c;
-    font-weight: bold;
-    margin-bottom: 10px;
-    text-align: left;
-    text-shadow: 1px 1px 5px #000;
-}
-
-.curiosidade-item p {
-    font-size: 16px;
-    line-height: 1.8;
-    color: #e8e8e8;
-    text-align: justify;
-    text-shadow: 1px 1px 3px #000;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
 .card-voltar-menu {
   display: flex;
   justify-content: center;
@@ -295,6 +246,13 @@ header {
   max-width: 900px;
   margin: 0 auto;
   line-height: 1.8;
+  border: 1px solid #3aaf5c;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #2b2b2b;
+  box-shadow: 0 0 10px rgba(58, 175, 92, 0.5);
+  color: #f2f2f2;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 h1, h2 {
@@ -305,13 +263,13 @@ h1, h2 {
 }
 
 p {
-  font-size: 1.1rem;
+  font-size: 17.6px;
   text-align: justify;
 }
 
 .intro-imagens {
   display: flex;
-  gap: 1rem;
+  gap: 16px;
   flex-wrap: wrap;
   justify-content: center;
     margin-top: 20px;
@@ -329,4 +287,28 @@ p {
   transform: scale(1.05);
   transition: transform 0.3s ease;
   box-shadow: 0 0 15px rgba(0,255,0,0.5);
+}
+
+li {
+  margin-bottom: 10px;
+  font-size: 17.6px;
+  color: #e8e8e8;
+  list-style-type: disc;
+  padding-left: 20px;
+  position: relative;
+  line-height: 1.6;
+  text-align: justify;
+  text-indent: 0;
+  margin-left: 20px;
+  padding-left: 24px;
+}
+
+strong {
+  color: #3aaf5c;
+}
+
+a {
+  color: #3aaf5c;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
