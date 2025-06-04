@@ -34,3 +34,4 @@ CREATE TABLE historico_mmr (
 SELECT * FROM usuario;
 select * from pontuacao;	
 select * from historico_mmr;
+
