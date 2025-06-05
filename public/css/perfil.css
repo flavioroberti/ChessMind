@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  background: hsl(0, 82%, 2%);
+  overflow-x: hidden;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000;
+  padding: 20px 40px;
+  border-bottom: 2px solid #3aaf5c;
+}
+
+.logoheader {
+  height: 70px;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 700px;
+}
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 12px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: #3aaf5c;
+}
+
+.navbar span {
+    color: #555;
+    margin: 0 8px;
+}
+
+
+.btn-login {
+  background-color: #3aaf5c;
+  color: #000;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+.btn-login:hover {
+  background-color: #5fdc7d;
+  color: #000 !important;
+}
+
+
+body {
+  background: linear-gradient(to bottom, #000000, #0a0a0a);
+  color: #e0ffe3;
+  font-family: 'Montserrat', sans-serif;
+  padding-bottom: 40px;
+}
+
+.perfil-usuario {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+}
+
+.card-perfil {
+  background: #111;
+  border: 2px solid #3aaf5c;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 255, 128, 0.2);
+  padding: 40px;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+
+.avatar-wrapper {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  margin: 0 auto 20px auto; 
+}
+
+.brilho-avatar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  box-shadow: 0 0 15px #00ff88, inset 0 0 10px #00ff88;
+  opacity: 0.2;
+  animation: pulsar 2.5s infinite;
+  z-index: 0; /* atrás da imagem */
+}
+
+.foto-perfil {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 4px solid #3aaf5c;
+  object-fit: cover;
+  box-shadow: 0 0 15px rgba(0, 255, 128, 0.3);
+  transition: transform 0.4s;
+  z-index: 1; 
+}
+
+
+
+@keyframes pulsar {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.15;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.3;
+  }
+}
+
+.texto-perfil h1 {
+  font-size: 28px;
+  color: #3aaf5c;
+  margin-bottom: 20px;
+}
+
+.info-item {
+  margin: 12px 0;
+  padding: 10px;
+  background-color: #1b1b1b;
+  border-radius: 8px;
+  border-left: 4px solid #00ff88;
+  font-size: 1.05rem;
+  text-align: left;
+}
+
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+}
+
+#b_usuario{
+    color: #3aaf5c;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.setinha {
+    font-size: 14px;
+    transform: rotate(90deg);
+    transition: transform 0.3s ease;
+}
+
+.setinha:hover {
+    transform: rotate(90deg) scale(1.2);
+    color: #00ff88;
+}
+
+
+.configuracoes-container {
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+  background-color: transparent;
+  flex-wrap: wrap; /* se precisar responsividade */
+  gap: 20px; /* opcional para espaçamento entre cards */
+}
+
+.configuracoes-card {
+  background-color: #1c1c1c;
+  color: #fff;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.2);
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s;
+  margin: 20px;
+  border: 2px solid #00ff88;
+  height: 350px;
+}
+
+.configuracoes-card h2 {
+  margin-bottom: 20px;
+  color: #00ff88;
+}
+
+.info-usuario p {
+  margin: 10px 0;
+}
+
+.botoes-config button {
+  margin: 10px 5px;
+  padding: 10px 20px;
+  border: none;
+  background-color: #00ff88;
+  color: #000;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.botoes-config .btn-excluir {
+  background-color: #ff4444;
+  color: white;
+}
+
+.botoes-config button:hover {
+  background-color: #00cc6e;
+}
+
+.form-edicao {
+  margin-top: 20px;
+}
+
+.form-edicao input {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  width: 80%;
+  border-radius: 10px;
+  border: 1px solid #444;
+  background-color: #2a2a2a;
+  color: white;
+}
+
+.form-edicao button {
+  background-color: #00ff88;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.oculto {
+  display: none;
+}

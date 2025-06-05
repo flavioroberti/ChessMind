@@ -15,11 +15,11 @@ var HOST_APP = process.env.APP_HOST;
 
 var app = express();
 
-var indexRouter = require("./src/routes/index");
 var usuarioRouter = require("./src/routes/usuarios");
 var quizRouter = require("./src/routes/quiz");
 var calculadoraRouter = require("./src/routes/calculadora");
 var dashboardRouter = require("./src/routes/dashboard");
+var perfilRouter = require("./src/routes/perfil");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -27,11 +27,11 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use(cors());
 
-app.use("/", indexRouter);
 app.use("/usuarios", usuarioRouter);
 app.use("/quiz", quizRouter);
 app.use("/calculadora", calculadoraRouter);
 app.use("/dashboard", dashboardRouter);
+app.use("/perfil", perfilRouter);
 
 
 app.listen(PORTA_APP, function () {

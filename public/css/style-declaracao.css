@@ -7,179 +7,187 @@
   font-family: 'Montserrat', sans-serif;
 }
 
-body {
-  background: #f4f4f4;
-  overflow-x: hidden;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 html, body {
   height: 100%;
   background-color: #1e1e1e;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
+}
+
+body {
+  color: #f2f2f2;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000;
+  padding: 20px 40px;
+  border-bottom: 2px solid #3aaf5c;
+}
+
+.logoheader {
+  height: 70px;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: #3aaf5c;
+}
+
+.navbar span {
+  color: #555;
+}
+
+.btn-login {
+  background-color: #3aaf5c;
+  color: #000;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-login:hover {
+  background-color: #5fdc7d;
+  color: #000 !important;
 }
 
 .missao {
   min-height: 100vh;
-  background-color: #1e1e1e;
   padding: 80px 20px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #000;
-    padding: 20px 40px;
-    border-bottom: 2px solid #3aaf5c;
-}
-
-.logoheader {
-    height: 70px;
-}
-
-.navbar {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 700px;
-}
-.navbar a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 12px;
-    font-weight: bold;
-    transition: color 0.3s;
-}
-
-.navbar a:hover {
-    color: #3aaf5c;
-}
-
-.navbar span {
-    color: #555;
-    margin: 0 8px;
-}
-.btn-login {
-    background-color: #3aaf5c;
-    color: #000;
-    padding: 8px 16px;
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.3s, color 0.3s;
-}
-
-.btn-login:hover {
-    background-color: #5fdc7d;
-    color: #000 !important;
-}
-
 .card-missao {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    background-color: #2b2b2b;
-    border-radius: 15px;
-    padding: 40px;
-    gap: 30px;
-    max-width: 1200px;
-    width: 100%;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center; 
+  justify-content: space-between; 
+  gap: 40px;
+  background-color: #2b2b2b;
+  border-radius: 20px;
+  padding: 40px;
+  max-width: 1200px;
+  width: 100%;
+  box-shadow: 0 0 20px rgba(0, 255, 130, 0.1);
+  flex-wrap: wrap;
 }
 
 .foto-missao {
-    width: 100%;
-    max-width: 300px;
-    height: auto;
-    border-radius: 10px;
-    object-fit: cover;
-    box-shadow: 0 0 10px rgba(58, 175, 92, 0.5);
-    display: block;
-    margin: 0 auto;
-    object-fit: cover;
-    padding: 10px;
+  width: 100%;
+  max-width: 320px;
+  height: auto; 
+  border-radius: 16px;
+  object-fit: contain; 
+  box-shadow: 0 0 20px rgba(58, 175, 92, 0.5);
+  margin: auto 0; 
+  padding: 10px;
 }
 
+
 .texto-missao {
-    flex: 1;
-    color: #f2f2f2;
+  flex: 1;
 }
 
 .texto-missao h1 {
-    color: #3aaf5c;
-    font-size: 35.2px;
-    font-family: Arial, Helvetica, sans-serif;
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-weight: 700;
-    text-shadow: 2px 2px 6px #000;
-
+  color: #3aaf5c;
+  font-size: 36px;
+  font-weight: 700;
+  text-shadow: 2px 2px 6px #000;
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-.texto-missao p {
-    font-size: 16px;
-    line-height: 1.9;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin-bottom: 18px;
-    color: #e8e8e8;
-    text-align: justify;
-    text-shadow: 1px 1px 3px #000;
+.missao-item {
+  margin-bottom: 25px;
+  background-color: #1e1e1e;
+  border-left: 5px solid #3aaf5c;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 255, 130, 0.1);
+  transition: transform 0.3s ease;
 }
 
-.texto-missao strong {
-    color: #3aaf5c;
+.missao-item:hover {
+  transform: translateY(-5px);
 }
 
-.texto-missao em {
-    color: #ccc;
-    font-style: italic;
+.missao-item h2 {
+  font-size: 20px;
+  color: #3aaf5c;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
-.frase-final{
-    font-size: 24px;
-    font-weight: bold;
-    color: #3aaf5c;
-    text-align: center;
-    margin-top: 20px;  
+.missao-item p {
+  color: #e2e2e2;
+  font-size: 15.5px;
+  line-height: 1.7;
+  text-align: justify;
+}
+
+.frase-final {
+  font-size: 24px;
+  font-weight: bold;
+  color: #3aaf5c;
+  text-align: center;
+  margin-top: 30px;
+  text-shadow: 1px 1px 4px #000;
+}
+
+.assinatura {
+  font-size: 18px;
+  text-align: right;
+  font-weight: 700;
+  color: #3aaf5c;
+  margin-top: 10px;
 }
 
 .card-voltar-menu {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
-  background: linear-gradient(135deg, hwb(130 4% 84%), lab(25.67% -22.95 18.15));
+  padding: 30px 20px;
+  background: linear-gradient(135deg, #3aaf5c, #1e1e1e);
   box-shadow: 0 -4px 10px rgba(58, 175, 92, 0.5);
-  transition: background 0.4s ease;
-  cursor: pointer;
+}
+
+.botao-voltar-menu {
+  text-decoration: none;
 }
 
 .botao-voltar {
   color: #fff;
   font-weight: 700;
   font-size: 20px;
-  text-transform: uppercase;
   padding: 12px 28px;
   background-color: rgba(0, 0, 0, 0.25);
   border: 2px solid #fff;
   border-radius: 15px;
   transition: all 0.4s ease;
   box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .botao-voltar:hover {
@@ -190,38 +198,34 @@ header {
   box-shadow: 0 6px 12px rgba(58, 175, 92, 0.8);
 }
 
-.user-info {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-weight: bold;
-    color: #fff;
-    cursor: pointer;
+.home-icon {
+  height: 20px;
+  filter: invert(1);
 }
 
-#b_usuario{
-    color: #3aaf5c;
-    font-weight: bold;
-    padding: 5px 10px;
-    border-radius: 5px;
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+}
+
+#b_usuario {
+  color: #3aaf5c;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
 }
 
 .setinha {
-    font-size: 14px;
-    transform: rotate(90deg);
-    transition: transform 0.3s ease;
+  font-size: 14px;
+  transform: rotate(90deg);
+  transition: transform 0.3s ease;
 }
 
 .setinha:hover {
-    transform: rotate(90deg) scale(1.2);
-    color: #00ff88;
-}
-
-.assinatura {
-  margin-top: 25px;
-  font-weight: 700;
-  color: #3aaf5c;
-  font-size: 18px;
-  text-align: right;
-  font-style: normal;
+  transform: rotate(90deg) scale(1.2);
+  color: #00ff88;
 }

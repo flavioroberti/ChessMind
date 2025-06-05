@@ -399,24 +399,28 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
-  background: linear-gradient(135deg, hwb(130 4% 84%), lab(25.67% -22.95 18.15));
+  padding: 30px 20px;
+  background: linear-gradient(135deg, #3aaf5c, #1e1e1e);
   box-shadow: 0 -4px 10px rgba(58, 175, 92, 0.5);
-  transition: background 0.4s ease;
-  cursor: pointer;
+}
+
+.botao-voltar-menu {
+  text-decoration: none;
 }
 
 .botao-voltar {
   color: #fff;
   font-weight: 700;
   font-size: 20px;
-  text-transform: uppercase;
   padding: 12px 28px;
   background-color: rgba(0, 0, 0, 0.25);
   border: 2px solid #fff;
   border-radius: 15px;
   transition: all 0.4s ease;
   box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .botao-voltar:hover {
@@ -425,6 +429,11 @@ header {
   color: #3aaf5c;
   border-color: #3aaf5c;
   box-shadow: 0 6px 12px rgba(58, 175, 92, 0.8);
+}
+
+.home-icon {
+  height: 20px;
+  filter: invert(1);
 }
 
 .user-info {

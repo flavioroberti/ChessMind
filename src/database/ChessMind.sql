@@ -30,8 +30,38 @@ CREATE TABLE historico_mmr (
     FOREIGN KEY (id_usuario) REFERENCES usuario(id)
 );
 
+ALTER TABLE usuario ADD COLUMN data_criacao DATETIME DEFAULT CURRENT_TIMESTAMP;
+
 
 SELECT * FROM usuario;
 select * from pontuacao;	
 select * from historico_mmr;
 
+/* SELECT mmr_calculado AS mmr 
+        FROM historico_mmr 
+        WHERE id_usuario = ${idUsuario} 
+        ORDER BY id_mmr DESC 
+        LIMIT 1;
+
+/* SELECT MAX(mmr_calculado) AS maior 
+        FROM historico_mmr 
+        WHERE id_usuario = ${idUsuario};
+
+/* SELECT AVG(acertos) AS media_acertos 
+        FROM pontuacao
+        WHERE fkUsuario = ${idUsuario};
+        
+/* SELECT MAX(acertos) AS maior_pontuacao 
+        FROM pontuacao 
+        WHERE fkUsuario = ${idUsuario};
+        
+/* SELECT u.nome, p.acertos 
+        FROM usuario u 
+        JOIN pontuacao p ON u.id = p.fkUsuario 
+        ORDER BY p.acertos DESC 
+        LIMIT 10;
+        
+/* SELECT idPontuacao, acertos, dataTentativa 
+        FROM pontuacao 
+        WHERE fkUsuario = ${idUsuario} 
+        ORDER BY dataTentativa DESC;

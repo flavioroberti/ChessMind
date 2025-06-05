@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChessMind | Perfil</title>
+    <link rel="stylesheet" href="../css/perfil.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img class="logoheader" src="../img/logochessmindbranco.png" alt="Logo Cavalo de Xadrez">
+        </div>
+        <nav class="navbar">
+            <a href="../index.html">Home</a>
+            <span>|</span>
+            <a href="../aprenda.html">Aprenda a jogar</a>
+            <a href="../taticas.html">Táticas</a>
+            <a href="../quiz.html">Quiz</a>
+            <a href="../calculadora.html">Calculadora</a>
+            <div class="user-info" id="user-info" style="display: none;">
+                <span id="b_usuario"></span>
+                <span class="setinha" onclick="limparSessao()" title="Sair">⏷</span>
+            </div>
+            <a class="btn-login" id="login-btn" href="login.html">Login</a>
+
+        </nav>
+    </header>
+
+    <section class="perfil-usuario">
+        <div class="card-perfil">
+            <div class="avatar-wrapper">
+                <img src="../img/avatar-perfil.png" alt="Avatar do Usuário" class="foto-perfil" />
+                <div class="brilho-avatar"></div>
+            </div>
+            <div class="texto-perfil">
+                <h1> Perfil</h1>
+                <div class="info-item"><strong>👤 Nome:</strong> <span id="nome-usuario"></span></div>
+                <div class="info-item"><strong>📧 Email:</strong> <span id="email-usuario"></span></div>
+                <div class="info-item"><strong>📅 Registro:</strong> <span id="data-registro"></span></div>
+                <div class="info-item"><strong>📊 MMR Atual:</strong> <span id="user_mmr_atual"></span></div>
+                <div class="info-item"><strong>🏆 Ranking:</strong> <span id="ranking-usuario"></span></div>
+            </div>
+        </div>
+
+        <div class="configuracoes-container">
+            <div class="configuracoes-card">
+                <h2>Configurações do Perfil</h2>
+
+                <div class="info-usuario">
+                    <p><strong>Nome:</strong> <span id="nome_usuario">Carregando...</span></p>
+                    <p><strong>Email:</strong> <span id="email_usuario">Carregando...</span></p>
+                </div>
+
+                <div class="botoes-config">
+                    <button onclick="abrirFormularioEdicao()">Alterar Nome / Email</button>
+                    <button onclick="abrirFormularioSenha()">Alterar Senha</button>
+                    <button class="btn-excluir" onclick="excluirConta()">Excluir Conta</button>
+                </div>
+
+                <div id="formulario-edicao" class="form-edicao oculto">
+                    <h3>Editar Perfil</h3>
+                    <input type="text" id="novo_nome" placeholder="Novo Nome">
+                    <input type="email" id="novo_email" placeholder="Novo Email">
+                    <button onclick="salvarEdicaoPerfil()">Salvar</button>
+                </div>
+
+                <div id="formulario-senha" class="form-edicao oculto">
+                    <h3>Alterar Senha</h3>
+                    <input type="password" id="senha_atual" placeholder="Senha Atual">
+                    <input type="password" id="nova_senha" placeholder="Nova Senha">
+                    <button onclick="salvarNovaSenha()">Salvar</button>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <script src="../js/perfil.js"></script>
+
+</body>
+
+</html>
