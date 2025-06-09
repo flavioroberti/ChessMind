@@ -17,6 +17,15 @@ function limparSessao() {
     window.location.href = "../login.html";
 }
 
+function irParaPerfil(){
+        var nome = sessionStorage.getItem("NOME_USUARIO");
+        if (nome != null) {
+            window.location.href = "../perfil.html";
+        } else {
+            window.location.href = "login.html";
+        }
+    }
+
 function calcularMMR() {
     const vitorias = Number(document.getElementById('vitorias').value);
     const derrotas = Number(document.getElementById('derrotas').value);
@@ -57,7 +66,7 @@ function calcularMMR() {
     const resultado = document.getElementById('resultadoMMR');
     resultado.innerHTML = `Seu MMR estimado é <strong>${Math.round(mmrFinal)}</strong>`;
 
-    fetch("http://localhost:3333/calculadora/salvar", {
+    fetch("/calculadora/salvar", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

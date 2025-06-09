@@ -65,6 +65,7 @@
                     <input type="text" id="novo_nome" placeholder="Novo Nome">
                     <input type="email" id="novo_email" placeholder="Novo Email">
                     <button onclick="salvarEdicaoPerfil()">Salvar</button>
+                    <button onclick="cancelarEdicaoPerfil()" type="button">Cancelar</button>
                 </div>
 
                 <div id="formulario-senha" class="form-edicao oculto">
@@ -72,14 +73,29 @@
                     <input type="password" id="senha_atual" placeholder="Senha Atual">
                     <input type="password" id="nova_senha" placeholder="Nova Senha">
                     <button onclick="salvarNovaSenha()">Salvar</button>
+                    <button onclick="cancelarEdicaoSenha()" type="button">Cancelar</button>
                 </div>
+
             </div>
-        </div>
 
     </section>
+
+    <div class="quiz-footer">
+        <p>Você pode acessar a Dashboard para ver seu desempenho no quiz.</p>
+        <button onclick="irParaDashboard()" class="btn-dashboard">
+            Ver Desempenho
+        </button>
+    </div>
+    </div>
 
     <script src="../js/perfil.js"></script>
 
 </body>
 
 </html>
+
+<script>
+    function irParaDashboard() {
+        window.location.href = "dashboard.html";
+    }
+</script>

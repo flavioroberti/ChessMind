@@ -21,7 +21,7 @@
             <a href="../quiz.html">Quiz</a>
             <a href="../calculadora.html">Calculadora</a>
             <div class="user-info" id="user-info" style="display: none;">
-                <span id="b_usuario"></span>
+                <span id="b_usuario" onclick="irParaPerfil()" ></span>
                 <span class="setinha" onclick="limparSessao()" title="Sair">⏷</span>
             </div>
             <a class="btn-login" id="login-btn" href="login.html">Login</a>
@@ -57,7 +57,6 @@
                 <h3>Redes Sociais</h3>
                 <p>
                     <a href="#">Instagram</a> |
-                    <a href="#">Twitter</a> |
                     <a href="#">Facebook</a>
                 </p>
             </div>
@@ -98,6 +97,15 @@
             sessionStorage.clear();
             window.location.href = "../login.html";
         }
+
+        function irParaPerfil(){
+        var nome = sessionStorage.getItem("NOME_USUARIO");
+        if (nome != null) {
+            window.location.href = "../perfil.html";
+        } else {
+            window.location.href = "login.html";
+        }
+    }
     </script>
 </body>
 

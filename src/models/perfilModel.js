@@ -24,7 +24,7 @@ function buscarRankingUsuario(idUsuario) {
     const instrucao = `
         SELECT posicao FROM (
             SELECT u.id,
-                   RANK() OVER (ORDER BY SUM(p.acertos) DESC) AS posicao
+                   RANK() OVER (ORDER BY MAX(p.acertos) DESC) AS posicao
             FROM usuario u
             LEFT JOIN pontuacao p ON u.id = p.fkUsuario
             GROUP BY u.id

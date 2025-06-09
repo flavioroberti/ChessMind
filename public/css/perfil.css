@@ -90,7 +90,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 60px 20px;
 }
 
 .card-perfil {
@@ -103,6 +102,7 @@ body {
   width: 100%;
   text-align: center;
   position: relative;
+  scale: 0.85;
 }
 
 .avatar-wrapper {
@@ -202,8 +202,8 @@ body {
   justify-content: center;
   padding: 40px;
   background-color: transparent;
-  flex-wrap: wrap; /* se precisar responsividade */
-  gap: 20px; /* opcional para espaçamento entre cards */
+  flex-wrap: wrap; 
+  gap: 20px; 
 }
 
 .configuracoes-card {
@@ -279,3 +279,35 @@ body {
 .oculto {
   display: none;
 }
+
+.quiz-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+}
+
+.btn-dashboard {
+    margin-top: 15px;
+    background-color: #00ff88;
+    color: black;
+    border: none;
+    padding: 12px 25px;
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+
+  .btn-dashboard:hover {
+    background-color: #00cc6a;
+    transform: scale(1.05);
+  }
+
+

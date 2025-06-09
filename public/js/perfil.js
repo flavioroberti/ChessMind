@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById("data-registro").textContent = sessionStorage.DATA_CRIACAO || "Desconhecida";
 
-    fetch(`http://localhost:3333/perfil/mmrAtual/${idUsuario}`)
+    fetch(`/perfil/mmrAtual/${idUsuario}`)
         .then(res => res.json())
         .then(data => {
             document.getElementById("user_mmr_atual").textContent = data.mmr || "0";
@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
             document.getElementById("user_mmr_atual").textContent = "0";
         });
 
-    fetch(`http://localhost:3333/perfil/ranking/${idUsuario}`)
+    fetch(`/perfil/ranking/${idUsuario}`)
         .then(res => res.json())
         .then(data => {
             document.getElementById("ranking-usuario").textContent = data.posicao || "Sem ranking";
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
             document.getElementById("ranking-usuario").textContent = "Indefinido";
         });
 
-    fetch(`http://localhost:3333/perfil/dados/${idUsuario}`)
+    fetch(`/perfil/dados/${idUsuario}`)
         .then(res => res.json())
         .then(dados => {
             document.getElementById("nome-usuario").textContent = dados.nome || "Nome não encontrado";
@@ -78,7 +78,7 @@ function salvarEdicaoPerfil() {
         return;
     }
 
-    fetch(`http://localhost:3333/perfil/editar/${sessionStorage.ID_USUARIO}`, {
+    fetch(`/perfil/editar/${sessionStorage.ID_USUARIO}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ novoNome: novoNome, novoEmail: novoEmail }),
@@ -121,7 +121,7 @@ function salvarNovaSenha() {
         return;
     }
 
-    fetch(`http://localhost:3333/perfil/alterarSenha/${sessionStorage.ID_USUARIO}`, {
+    fetch(`/perfil/alterarSenha/${sessionStorage.ID_USUARIO}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ senhaAtual, novaSenha }),
@@ -155,14 +155,14 @@ function excluirConta() {
         return;
     }
 
-    fetch(`http://localhost:3333/perfil/excluirPontuacaoQuiz/${idUsuario}`, { method: "DELETE" })
+    fetch(`/perfil/excluirPontuacaoQuiz/${idUsuario}`, { method: "DELETE" })
         .then(res => {
             if (!res.ok) throw new Error("Erro ao excluir pontuação do quiz");
-            return fetch(`http://localhost:3333/perfil/excluirHistoricoMMR/${idUsuario}`, { method: "DELETE" });
+            return fetch(`/perfil/excluirHistoricoMMR/${idUsuario}`, { method: "DELETE" });
         })
         .then(res => {
             if (!res.ok) throw new Error("Erro ao excluir histórico de MMR");
-            return fetch(`http://localhost:3333/perfil/excluir/${idUsuario}`, { method: "DELETE" });
+            return fetch(`/perfil/excluir/${idUsuario}`, { method: "DELETE" });
         })
         .then(res => {
             if (!res.ok) throw new Error("Erro ao excluir o perfil");
@@ -176,3 +176,16 @@ function excluirConta() {
         });
 }
 
+function cancelarEdicaoPerfil() {
+    const formularioEdicao = document.getElementById("formulario-edicao");
+    formularioEdicao.classList.add("oculto");
+    document.getElementById("novo_nome").value = "";
+    document.getElementById("novo_email").value = "";
+}
+
+function cancelarEdicaoSenha() {
+    const formularioSenha = document.getElementById("formulario-senha");
+    formularioSenha.classList.add("oculto");
+    document.getElementById("senha_atual").value = "";
+    document.getElementById("nova_senha").value = "";
+}

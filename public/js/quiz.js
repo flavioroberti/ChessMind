@@ -193,7 +193,7 @@ function finalizarQuiz() {
 
   document.getElementById("btn-reiniciar").addEventListener("click", reiniciarQuiz);
 
-  fetch("http://localhost:3333/quiz/salvar", {
+  fetch("/quiz/salvar", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"

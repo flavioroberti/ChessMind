@@ -197,7 +197,7 @@ header {
   padding: 15px;
   width: 250px;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
   transition: transform 0.2s ease;
 }

@@ -12,7 +12,7 @@ function validarUsuario() {
 function exibirMMRAtual() {
     const idUsuario = sessionStorage.ID_USUARIO;
 
-    fetch(`http://localhost:3333/dashboard/mmrAtual/${idUsuario}`)
+    fetch(`/dashboard/mmrAtual/${idUsuario}`)
         .then(res => res.json())
         .then(data => {
             console.log("MMR Atual:", data);
@@ -25,7 +25,7 @@ function exibirMMRAtual() {
 function exibirMaiorMMR() {
     const idUsuario = sessionStorage.ID_USUARIO;
 
-    fetch(`http://localhost:3333/dashboard/maiorMMR/${idUsuario}`)
+    fetch(`/dashboard/maiorMMR/${idUsuario}`)
         .then(res => res.json())
         .then(data => {
             document.getElementById("user_maior_mmr").textContent = data.maior;
@@ -36,7 +36,7 @@ function exibirMaiorMMR() {
 function exibirMediaAcertos() {
     const idUsuario = sessionStorage.ID_USUARIO;
 
-    fetch(`http://localhost:3333/dashboard/mediaAcertos/${idUsuario}`)
+    fetch(`/dashboard/mediaAcertos/${idUsuario}`)
         .then(res => res.json())
         .then(data => {
             const media = Number(data.media_acertos);
@@ -68,7 +68,7 @@ function exibirMediaAcertos() {
 function exibirMaiorPontuacao() {
     const idUsuario = sessionStorage.ID_USUARIO;
 
-    fetch(`http://localhost:3333/dashboard/maiorPontuacao/${idUsuario}`)
+    fetch(`/dashboard/maiorPontuacao/${idUsuario}`)
         .then(res => res.json())
         .then(data => {
             if (data.maior_pontuacao === null || data.maior_pontuacao === undefined) {
@@ -82,7 +82,7 @@ function exibirMaiorPontuacao() {
 }
 
 function exibirRanking() {
-    fetch(`http://localhost:3333/dashboard/ranking`)
+    fetch(`/dashboard/ranking`)
         .then(res => res.json())
         .then(data => {
             const rankingTableBody = document.querySelector("#ranking_table tbody");
@@ -115,7 +115,7 @@ function exibirRanking() {
 function exibirEvolucaoDesempenho() {
     const idUsuario = sessionStorage.ID_USUARIO;
 
-    fetch(`http://localhost:3333/dashboard/evolucaoDesempenho/${idUsuario}`)
+    fetch(`/dashboard/evolucaoDesempenho/${idUsuario}`)
         .then(res => res.json())
         .then(data => {
             const chartData = data.map(item => ({
