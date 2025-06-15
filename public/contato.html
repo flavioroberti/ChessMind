@@ -21,7 +21,7 @@
             <a href="../quiz.html">Quiz</a>
             <a href="../calculadora.html">Calculadora</a>
             <div class="user-info" id="user-info" style="display: none;">
-                <span id="b_usuario" onclick="irParaPerfil()" ></span>
+                <span id="b_usuario" onclick="irParaPerfil()"></span>
                 <span class="setinha" onclick="limparSessao()" title="Sair">⏷</span>
             </div>
             <a class="btn-login" id="login-btn" href="login.html">Login</a>
@@ -36,7 +36,8 @@
                 <p>Tem alguma dúvida, sugestão ou quer conversar sobre xadrez?</p>
                 <p>Estamos aqui para ajudar!</p>
                 <p><strong>Email:</strong> contato@chessmind.com.br</p>
-                <blockquote class="frase-inspiradora">"O xadrez é a ginástica da mente. Fale conosco e vamos evoluir juntos." ♞</blockquote>
+                <blockquote class="frase-inspiradora">"O xadrez é a ginástica da mente. Fale conosco e vamos evoluir
+                    juntos." ♞</blockquote>
             </div>
         </div>
 
@@ -46,6 +47,13 @@
             <textarea name="mensagem" placeholder="Escreva sua mensagem..." rows="5" required></textarea>
             <button type="submit">Enviar</button>
         </form>
+
+        <section class="comentarios-section">
+            <h2>Mensagens Recentes</h2>
+            <div id="comentarios-container" class="comentarios-container">
+            </div>
+        </section>
+
 
         <div class="info-extra">
             <div class="card-info">
@@ -57,7 +65,7 @@
                 <h3>Redes Sociais</h3>
                 <p>
                     <a href="#">Instagram</a> |
-                    <a href="#">Facebook</a>
+                    <a href="#">GitHub</a>
                 </p>
             </div>
         </div>
@@ -71,42 +79,8 @@
         </div>
     </main>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const nomeUsuario = sessionStorage.NOME_USUARIO;
-
-            const userInfo = document.getElementById("user-info");
-            const loginBtn = document.getElementById("login-btn");
-            const b_usuario = document.getElementById("b_usuario");
-
-            if (nomeUsuario) {
-                b_usuario.innerText = `Olá, ${nomeUsuario.split(' ')[0]}`;
-                userInfo.style.display = "flex";
-                loginBtn.style.display = "none";
-            }
-
-            const form = document.querySelector(".form-contato");
-            form.addEventListener("submit", function (e) {
-                e.preventDefault();
-                alert("Mensagem enviada! Em breve entraremos em contato.");
-                form.reset();
-            });
-        });
-
-        function limparSessao() {
-            sessionStorage.clear();
-            window.location.href = "../login.html";
-        }
-
-        function irParaPerfil(){
-        var nome = sessionStorage.getItem("NOME_USUARIO");
-        if (nome != null) {
-            window.location.href = "../perfil.html";
-        } else {
-            window.location.href = "login.html";
-        }
-    }
-    </script>
+    <script src="../js/sessao.js"></script>
+    <script src="../js/contato.js"></script>
 </body>
 
 </html>

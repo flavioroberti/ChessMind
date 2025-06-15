@@ -30,12 +30,23 @@ CREATE TABLE historico_mmr (
     FOREIGN KEY (id_usuario) REFERENCES usuario(id)
 );
 
+CREATE TABLE contato (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(100),
+    email VARCHAR(100),
+    mensagem TEXT,
+    data_envio DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+
 ALTER TABLE usuario ADD COLUMN data_criacao DATETIME DEFAULT CURRENT_TIMESTAMP;
 
 
 SELECT * FROM usuario;
 select * from pontuacao;	
+select * from contato;
 select * from historico_mmr;
+
 
 /* SELECT mmr_calculado AS mmr 
         FROM historico_mmr 
@@ -65,3 +76,5 @@ select * from historico_mmr;
         FROM pontuacao 
         WHERE fkUsuario = ${idUsuario} 
         ORDER BY dataTentativa DESC;
+
+

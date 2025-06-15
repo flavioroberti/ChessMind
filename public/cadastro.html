@@ -127,7 +127,6 @@
       return { valido: false, mensagem: "O email deve terminar com um domínio válido (ex: .com, .com.br)." };
     }
 
-    // Substituição da validação por regex para validação simples manual:
     if (!validarEmailSimples(email)) {
       return { valido: false, mensagem: "O email contém caracteres inválidos." };
     }
