@@ -30,19 +30,19 @@ document.addEventListener("DOMContentLoaded", function () {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ nome, email, mensagem })
         })
-        .then(res => {
-            if (res.ok) {
-                alert("Mensagem enviada! Em breve entraremos em contato.");
-                form.reset();
-                carregarComentarios();
-            } else {
-                alert("Erro ao enviar mensagem.");
-            }
-        })
-        .catch(err => {
-            console.error("Erro ao enviar mensagem:", err);
-            alert("Erro na comunicação com o servidor.");
-        });
+            .then(res => {
+                if (res.ok) {
+                    alert("Mensagem enviada! Em breve entraremos em contato.");
+                    form.reset();
+                    carregarComentarios();
+                } else {
+                    alert("Erro ao enviar mensagem.");
+                }
+            })
+            .catch(err => {
+                console.error("Erro ao enviar mensagem:", err);
+                alert("Erro na comunicação com o servidor.");
+            });
     });
 });
 
@@ -61,6 +61,9 @@ function irParaPerfil() {
 }
 
 function carregarComentarios() {
+    const emailUsuario = sessionStorage.EMAIL_USUARIO;
+    const isAdmin = emailUsuario === "admin@suporte.com";
+
     fetch("/contato/listar")
         .then(res => {
             if (!res.ok) throw new Error("Erro ao buscar comentários.");
@@ -68,7 +71,7 @@ function carregarComentarios() {
         })
         .then(comentarios => {
             const container = document.getElementById("comentarios-container");
-            container.innerHTML = ""; 
+            container.innerHTML = "";
 
             if (comentarios.length === 0) {
                 container.innerHTML = "<p class='sem-comentario'>Nenhum comentário enviado ainda.</p>";
@@ -82,6 +85,7 @@ function carregarComentarios() {
                     <h4>${c.nome}</h4>
                     <p class="email">${c.email}</p>
                     <p class="mensagem">"${c.mensagem}"</p>
+                    ${isAdmin ? `<button class="btn-apagar" onclick="apagarMensagem(${c.id})">Apagar</button>` : ''}
                 `;
                 container.appendChild(card);
             });
@@ -90,5 +94,34 @@ function carregarComentarios() {
             console.error("Erro ao carregar comentários:", err);
         });
 }
+
+
+function apagarMensagem(id) {
+    const emailUsuario = sessionStorage.EMAIL_USUARIO;
+
+    if (confirm("Tem certeza que deseja apagar esta mensagem?")) {
+        fetch(`/contato/deletar/${id}`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+                "email": emailUsuario
+            }
+        })
+        .then(res => {
+            if (res.ok) {
+                alert("Mensagem apagada com sucesso.");
+                carregarComentarios();
+            } else {
+                alert("Erro ao apagar a mensagem.");
+            }
+        })
+        .catch(err => {
+            console.error("Erro ao apagar mensagem:", err);
+            alert("Erro na comunicação com o servidor.");
+        });
+    }
+}
+
+
 
 document.addEventListener("DOMContentLoaded", carregarComentarios);

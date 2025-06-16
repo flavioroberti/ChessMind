@@ -27,7 +27,27 @@ function listar(req, res) {
             res.status(500).json({ erro: "Erro interno ao listar mensagens" });
         });
 }
+
+function deletar(req, res) {
+    const idMensagem = req.params.id;
+    const emailUsuario = req.headers.email;
+
+    if (emailUsuario !== "admin@suporte.com") {
+        return res.status(403).json({ erro: "Apenas o administrador pode apagar mensagens." });
+    }
+
+    contatoModel.deletarMensagem(idMensagem)
+        .then(() => {
+            res.status(200).json({ mensagem: "Mensagem apagada com sucesso." });
+        })
+        .catch((erro) => {
+            console.error(erro);
+            res.status(500).json({ erro: "Erro ao apagar mensagem." });
+        });
+}
+
 module.exports = {
     salvar,
-    listar
+    listar,
+    deletar
 };
